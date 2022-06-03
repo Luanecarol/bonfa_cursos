@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: block;
+    background:white;  
+    float: right;  
+    width: 84%;
+    height: 100vh;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+
+.tittle-container{
+    color: slategray;
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 45px;
+    position: relative;
+}
+
+.container-add{
+    float: right;
+    padding-left: 20px;
+    padding-right: 70px;
+    padding-top:20px ;
+    padding-bottom: 15px;
+    background-color: aquamarine;
+}
+
+.container-subtittle{
+   display: flex;
+   padding-left: 40px;
+   font-size: 22px;
+}
+
+.card-image{
+    margin: 7px;
+    width:240px;
+    height: 185px;
+background-color: black;}
+
+.container-card{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.card{
+    margin-top: 35px;
+    margin-left: 35px;  
+    height: 280px;
+    width: 260px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    border-right-width: 0;
+
+}
+
+.text-card{
+    padding-left: 12px;
+}
+
+.icon-image{
+    float: right;
+    color: aqua;
+    padding-right: 8px;
+    margin-top: 150px;
+}
+
+.icon-student{
+    padding-left: 8px;
+}
+
+.icon-student-text{
+    font-size: 10px;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+.icon-hand{
+    margin-left: 20px;
+}
+
+.icon-hand-text{
+    font-size: 10px;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+.icon-arrow{
+    margin-left: 4px;
+}
+
+.container-icon{
+    margin-top: 10px;
+    display: flex;
+}
+
+.icon-edit{
+    margin-left: 83px;
+}
+
+.icon-anexo{
+    margin-left: 92px;
+}
+
+.suport{
+    margin-top: 90px;
+    float: right;
+    width: 200px;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 1px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    
+}
+
+.suport-text{
+margin-left: 7px;
+}

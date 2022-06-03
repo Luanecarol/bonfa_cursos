@@ -1,0 +1,141 @@
+:root{
+    --header-height: 3rem;
+    --nav-width: 68px;
+    
+    --first-color: black;
+    --white-color: white;
+    
+    }
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    ul{
+        list-style: none;
+    }
+    
+    main{
+        position: relative;
+        margin: var(--header-height) 0 0 0;
+        padding: 0 1rem;
+        font-size: 1rem;
+        transition: 0.5s;
+        
+    
+    }
+    
+    .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--header-height);
+    width: 16%;
+   /* display: flex;
+    justify-content: space-between;
+    align-items: center;*/
+    background-color: var(--white-color);
+    padding: 0 1rem;
+    transition: .5s;
+    
+    }
+    
+    .header-toggle{
+        font-size: 1.25rem;
+        cursor: pointer;
+        color: white;
+        
+    }
+    
+    .sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 16%;
+        background-color: var(--first-color);
+        padding-top: 1rem;
+        transition: .5s;
+       
+    
+    }
+    
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        height: 100%;
+       
+    }
+    
+     .nav-link{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 2rem;
+    padding: 0.5rem 0 2rem 1.5rem;
+    
+    }
+    
+    .nav-logo{
+        margin-bottom: 2rem;
+    }
+    
+    .nav-logo-icon, .nav-link-icon{
+        font-size: 1.25rem;
+        color: aquamarine;
+        cursor: pointer;
+    }
+    .nav-logo-name-2{
+        font-weight: 200;
+        color: var(--white-color);
+        padding-right: 800px;
+        font-size: 32px;
+       
+    
+        
+    }
+    
+    .nav-logo-name{
+        color: aquamarine;
+    }
+    
+    .nav-link{
+        position: relative;
+        color: white;
+        transition: 0.5s;
+        margin-bottom: 0rem;
+        margin-top: 0;
+    
+    }
+    
+    .nav-link:hover{
+        color: white;
+        background-color: #54f6bbe4;
+    
+    }
+    
+    .active{
+        color: var(--white-color);
+        background-color: rgba(0, 0, 0, 0.1);
+    
+    }
+    
+    .show{
+        left: 0;
+    }
+    
+    .space-toggle{
+        width: 16%;
+    }
+    
+    @media screen and (min-width: 768px) {
+    
+    }

@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import {BrowserRouter} from 'react-router-dom';
+/*import Sidebar from './components/sidebar.js';*/
+/*import Dashboard from './components/dashboard.js';*/
+/*import Cards from './components/cards.js';*/
+/*import SidebarArea from './components/sidebarArea.js';*/
+/*import Cursos from './components/cursos.js';*/
+import Suport from './components/suport.js';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+   {/*} <App /> */}
+{/*<Sidebar/>*/}
+  {/*<Dashboard/>*/}
+  {/*<Cards/>*/}
+  {/*<SidebarArea/>*/}
+  {/*<Cursos/>*/}
+  <Suport/>
+   </BrowserRouter>
   </React.StrictMode>
 );
 

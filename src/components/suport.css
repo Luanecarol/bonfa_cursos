@@ -1,0 +1,54 @@
+.container-suport{
+    width: 70%;
+    height: 100vh;
+    background-color: black;
+    float: right;
+}
+
+.container{
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.tittle{
+    padding-bottom: 30px;
+}
+
+.tittle-suport{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 900px;
+}
+
+.checkbox{
+    padding-right: 500px;
+}
+.text-checkbox{
+    color: white;
+
+}
+
+.container-input{
+display: block;
+}
+
+.form{
+    line-height: 40px;
+   
+}
+
+input{
+    font-size: 12px;
+    border-radius: 4px;
+    width: 180px;
+    height: 20px;
+}
+.icon-input{
+    color: aquamarine;
+    margin-right: 8px;
+}
+.icon-input-2{
+    color: black;
+    margin-right: 8px;
+}
+
