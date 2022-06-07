@@ -6,49 +6,153 @@
 }
 
 .container{
-    padding-top: 40px;
+    padding-top: 20px;
     padding-left: 40px;
 }
 
+.items-suport{
+    padding-top: 9px;
+    display: flex;
+}
 .tittle{
-    padding-bottom: 30px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    line-height: 70px;
 }
 
 .tittle-suport{
-    color: white;
-    font-size: 25px;
-    margin-bottom: 900px;
-}
-
-.checkbox{
-    padding-right: 500px;
-}
-.text-checkbox{
-    color: white;
+    font-size: 40px;
+    font-weight: bold;
 
 }
 
-.container-input{
-display: block;
+.tittle-suport-2{
+    padding-top: 20px;
 }
 
 .form{
-    line-height: 40px;
-   
+display: flex;
+flex-direction: column;
+}
+
+.form-input{
+    padding-top: 8px;
+}
+
+
+.text-checkbox{
+    color: white;
+    padding-top: 10px;
+}
+
+.text-checkbox-2{
+    margin-top: 9000px;
+    color: white;
+}
+
+.checkbox{
+ width: 20%;
+ float: left;
+
+}
+
+.checkbox-item{
+    display: flex;
+}
+
+.checkbox-item-2{
+padding-top: 20px;
+}
+
+.checkbox-2{
+    height: 80px;
+    margin-top: 40px;
 }
 
 input{
     font-size: 12px;
     border-radius: 4px;
     width: 180px;
-    height: 20px;
+    height: 25px;
+    margin-top: 5px;
 }
+
 .icon-input{
     color: aquamarine;
     margin-right: 8px;
 }
+
 .icon-input-2{
-    color: black;
-    margin-right: 8px;
+
+    color: aquamarine;
+    padding-top: 60px;
 }
 
+.icon-input-3{
+    color: aquamarine;
+    margin-right: 8px;
+    padding-top: 13px;
+    
+}
+
+.text-area{
+  color: white;
+  font-size: 28px;
+}
+
+.text-area-input{
+background: white;
+border-style: solid;
+border-width: 1px;
+border-radius: 6px;
+border-color: darkgrey;
+padding: 5px;
+font-size: 20px;
+
+}
+
+.container-comentario{
+    margin-top: 30px;
+}
+
+.text-box{
+   margin-top: 70px;
+   display: flex;
+}
+.div-name{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2px;
+}
+.div-curso{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.div-modulo{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.div-aula{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.div-comentario{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.div-text{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
