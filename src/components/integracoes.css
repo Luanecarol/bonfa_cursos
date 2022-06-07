@@ -1,0 +1,45 @@
+.container{
+    width: 70%;
+    height: 100vh;
+    background-color: black;
+    float: right;
+}
+
+.container-text{ 
+    padding-top: 30px;
+    padding-left: 50px;
+   
+}
+
+.tittle{
+    font-size: 50px;
+    color: white;
+
+
+}
+
+.tittle-2{
+    font-size: 30px;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 15px;
+}
+
+input{
+    padding: 8px;
+    margin-right: 6px;
+    border-radius: 6px;
+}
+
+button{
+    background-color: aqua;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px;
+    padding-right: 50px;
+    border-radius: 6px;
+}
+
+.input-1{
+    margin-top: 10px;
+}

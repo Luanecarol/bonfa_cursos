@@ -7,7 +7,8 @@ import {BrowserRouter} from 'react-router-dom';
 /*import Cards from './components/cards.js';*/
 /*import SidebarArea from './components/sidebarArea.js';*/
 /*import Cursos from './components/cursos.js';*/
-import Suport from './components/suport.js';
+/*import Suport from './components/suport.js';*/
+import Integracoes from './components/integracoes.js';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -21,7 +22,8 @@ root.render(
   {/*<Cards/>*/}
   {/*<SidebarArea/>*/}
   {/*<Cursos/>*/}
-  <Suport/>
+  {/*<Suport/>*/}
+  <Integracoes/>
    </BrowserRouter>
   </React.StrictMode>
 );
