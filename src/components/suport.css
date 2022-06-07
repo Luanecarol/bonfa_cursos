@@ -1,6 +1,6 @@
 .container-suport{
     width: 70%;
-    height: 100vh;
+    height: 100%;
     background-color: black;
     float: right;
 }
@@ -8,6 +8,7 @@
 .container{
     padding-top: 20px;
     padding-left: 40px;
+    
 }
 
 .items-suport{
@@ -16,7 +17,6 @@
 }
 .tittle{
     color: white;
-    font-size: 25px;
     display: flex;
     flex-direction: column;
     line-height: 70px;
@@ -30,6 +30,7 @@
 
 .tittle-suport-2{
     padding-top: 20px;
+    font-size: 20px;
 }
 
 .form{
@@ -100,6 +101,7 @@ input{
 .text-area{
   color: white;
   font-size: 28px;
+  padding-bottom: 30px;
 }
 
 .text-area-input{
@@ -109,8 +111,8 @@ border-width: 1px;
 border-radius: 6px;
 border-color: darkgrey;
 padding: 5px;
-font-size: 20px;
-
+font-size: 15px;
+color: darkgrey;
 }
 
 .container-comentario{
@@ -118,41 +120,80 @@ font-size: 20px;
 }
 
 .text-box{
-   margin-top: 70px;
+   margin-top: 20px;
    display: flex;
 }
 .div-name{
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 2px;
+    padding: 8px;
+    line-height: 30px;
+
 }
 .div-curso{
     display: flex;
     flex-direction: column;
     color: white;
+    padding: 8px;
+    line-height: 30px;
+
 }
 .div-modulo{
     display: flex;
     flex-direction: column;
     color: white;
+    padding: 8px;
+    line-height: 30px;
+
 }
 .div-aula{
     display: flex;
     flex-direction: column;
     color: white;
+    padding: 8px;
+    line-height: 30px;
+
 }
 .div-comentario{
     display: flex;
     flex-direction: column;
     color: white;
+    padding: 8px;
+    line-height: 30px;
+
 }
 .div-text{
     display: flex;
     flex-direction: column;
-    color: white;
+    padding: 8px;
+    line-height: 30px;
+    margin-top: 30px;
 }
 
-a{
-    text-decoration: none;
+.div-text-1{
+color: aqua;
+text-decoration: none;
+}
+
+.div-seta{
+    margin-top: 36px;
+}
+
+.text-read{
+    color: aqua;
+}
+
+.icon-seta{
+    color: aqua;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    line-height: 26px;
+    
+}
+
+.icon-seta-1{
+    color: aqua;
+    margin-left: 3px;
 }

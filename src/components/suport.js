@@ -48,10 +48,9 @@ function Suport() {
      </div>
 
      <div className='container-comentario'>
-       <div> <span className='text-area'>Comentários</span> </div>
-     <div>   <span className='text-area-input'>curso <i class="fa-solid fa-caret-down"></i>    
-   |   Aula<i class="fa-solid fa-caret-down"></i>| 15/05/2022 - 15/06/2022<i class="fa-solid fa-caret-down"></i></span>
-   </div>
+       <div className='text-area'><span >Comentários</span> </div>
+     <div><span className='text-area-input'>curso <i class="fa-solid fa-caret-down"></i>    
+   |   Aula<i class="fa-solid fa-caret-down"></i>| 15/05/2022 - 15/06/2022<i class="fa-solid fa-caret-down"></i></span></div>
        <div className='text-box'>
         <div className='div-name'>
                 <span>Nome</span>
@@ -59,6 +58,7 @@ function Suport() {
                 <span>Paulo Bonfá</span>
                 <span>Paulo Bonfá</span>
                 <span>Paulo Bonfá</span>
+                <span className='text-read'>Ver Todos<i class="fa-solid fa-arrow-right icon-seta-1"></i></span>
             </div>   
             <div className='div-curso'>
                 <span>Curso</span>
@@ -91,13 +91,20 @@ function Suport() {
                 <span>loren</span>
                 </div> 
                 <div className='div-text'>
-                    <a href=' '>Ler Mais</a>
-                    <a href=' '>Ler Mais</a>
-                    <a href=' '>Ler Mais</a>
-                    <a href=' '>Ler Mais</a>
+                    <a className='div-text-1' href=' '>Ler Mais</a>
+                    <a className='div-text-1'href=' '>Ler Mais</a>
+                    <a className='div-text-1'href=' '>Ler Mais</a>
+                    <a className='div-text-1'href=' '>Ler Mais</a>
                 </div>
+                <div className='div-seta'>
+                <i class="fa-solid fa-arrow-right icon-seta"></i>
+                <i class="fa-solid fa-arrow-right icon-seta"></i>
+                <i class="fa-solid fa-arrow-right icon-seta"></i>
+                <i class="fa-solid fa-arrow-right icon-seta"></i>
                 </div>
-                <span>Ler Mais</span>
+
+
+                </div>
 
 
      </div>
