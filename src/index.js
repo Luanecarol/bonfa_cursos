@@ -10,7 +10,8 @@ import {BrowserRouter} from 'react-router-dom';
 /*import Suport from './components/suport.js';*/
 /*import Integracoes from './components/integracoes.js';*/
 /*import Planos from './components/planos.js';*/
-import Dominios from './components/dominios.js';
+/*import Dominios from './components/dominios.js';*/
+import Certificado from './components/certificado.js';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -27,7 +28,8 @@ root.render(
   {/*<Suport/>*/}
   {/*<Integracoes/>*/}
   {/*<Planos/>*/}
-  <Dominios/>
+  {/*<Dominios/>*/}
+  <Certificado/>
    </BrowserRouter>
   </React.StrictMode>
 );

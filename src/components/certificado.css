@@ -1,0 +1,78 @@
+.container{
+    width: 70%;
+    height: 100%;
+    background-color: black;
+    float: right;
+}
+
+.container-text{ 
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    height: 100vh;
+}
+
+.tittle{
+    font-size: 50px;
+    color: white;
+
+
+}
+
+.tittle-2{
+    font-size: 23px;
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 15px;
+}
+
+input{
+    padding: 8px;
+    margin-right: 6px;
+    border-radius: 6px;
+}
+
+button{
+    background-color: aqua;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 6px;
+
+}
+
+.input-div{
+    margin-top: px;
+    
+}
+
+.input-1{
+    width: 35px;
+    height:9px;
+}
+
+.input-2{
+    background-color: rgb(213, 204, 204);
+    color: darkgray;
+    width: 15px;
+    height:9px;
+    margin-left: -5px;
+    margin-right: 9px;
+
+
+}
+
+.box-1{
+    width: 350px;
+    height: 250px;
+    background-color: white;
+
+}
+
+.modelo{
+    padding-top: 30px;
+}
+.icon-pen{
+    color: aqua;
+}
+
