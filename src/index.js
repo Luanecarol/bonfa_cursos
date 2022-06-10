@@ -8,7 +8,9 @@ import {BrowserRouter} from 'react-router-dom';
 /*import SidebarArea from './components/sidebarArea.js';*/
 /*import Cursos from './components/cursos.js';*/
 /*import Suport from './components/suport.js';*/
-import Integracoes from './components/integracoes.js';
+/*import Integracoes from './components/integracoes.js';*/
+/*import Planos from './components/planos.js';*/
+import Dominios from './components/dominios.js';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,14 +18,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-   {/*} <App /> */}
+   {/* <App /> */}
 {/*<Sidebar/>*/}
   {/*<Dashboard/>*/}
   {/*<Cards/>*/}
   {/*<SidebarArea/>*/}
   {/*<Cursos/>*/}
   {/*<Suport/>*/}
-  <Integracoes/>
+  {/*<Integracoes/>*/}
+  {/*<Planos/>*/}
+  <Dominios/>
    </BrowserRouter>
   </React.StrictMode>
 );
