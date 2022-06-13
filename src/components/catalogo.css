@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: block;
+    background:white;  
+    float: right;  
+    width: 84%;
+    height: 100vh;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+
+.tittle-container{
+    color: black;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 45px;
+    position: relative;
+}
+
+.container-subtittle{
+    margin-top: 20px;
+   display: flex;
+   padding-left: 40px;
+   font-size: 25px;
+
+}
+
+.container-subtittle-1{
+    margin-top: 20px;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: darkgray;
+    color:darkgray;
+    width: 230px;
+    margin-left: 40px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    font-size: 10px;
+    padding: 5px;
+
+}
+
+.icon-seta{
+    padding-left: 170px;
+    color: black;
+}
+
+.text-div-card{
+    padding-top: 40px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.card-image{
+    margin: 7px;
+    width:240px;
+    height: 185px;
+background-color: black;}
+
+.container-card{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.tittle-card{
+    display: flex;
+flex-direction: column; 
+font-weight: 500;   
+}
+
+.text-card-1{
+    font-size: 13px;
+    margin-left: 10px;
+    color: darkgray;
+}
+
+button{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: 700;
+    background-color: #09DAB3;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    height: 23px;
+    width: 90px;
+}
+
+.card{
+    margin-top: 35px;
+    margin-left: 35px;  
+    height: 280px;
+    width: 260px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    border-right-width: 0;
+    border-color: darkgray;
+
+}
+
+a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #09DAB3;
+}
+
+.icon-seta-1{
+    padding-left:12px ;
+}
+
+.text-card{
+    padding-left: 12px;
+}
+
+.icon-image{
+    float: right;
+    color: aqua;
+    padding-right: 8px;
+    margin-top: 150px;
+}
+
+.icon-student{
+    padding-left: 8px;
+}
+
+.icon-student-text{
+    font-size: 10px;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+.icon-hand{
+    margin-left: 20px;
+}
+
+.icon-hand-text{
+    font-size: 10px;
+    margin-left: 3px;
+    margin-top: 6px;
+}
+
+.icon-arrow{
+    margin-left: 4px;
+}
+
+.container-icon{
+    margin-top: 10px;
+    display: flex;
+}
+
+.icon-edit{
+    margin-left: 83px;
+}
+
+.icon-anexo{
+    margin-left: 92px;
+}
+
+.suport{
+    margin-top: 90px;
+    float: right;
+    width: 200px;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 1px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    
+}
+
+.suport-text{
+margin-left: 7px;
+}

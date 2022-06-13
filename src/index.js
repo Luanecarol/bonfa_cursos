@@ -11,8 +11,8 @@ import {BrowserRouter} from 'react-router-dom';
 /*import Integracoes from './components/integracoes.js';*/
 /*import Planos from './components/planos.js';*/
 /*import Dominios from './components/dominios.js';*/
-import Certificado from './components/certificado.js';
-
+/*import Certificado from './components/certificado.js';*/
+import Catalogo from './components/catalogo.js'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,7 +29,8 @@ root.render(
   {/*<Integracoes/>*/}
   {/*<Planos/>*/}
   {/*<Dominios/>*/}
-  <Certificado/>
+ {/* <Certificado/>*/}
+ <Catalogo/>
    </BrowserRouter>
   </React.StrictMode>
 );
