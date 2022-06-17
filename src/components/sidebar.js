@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Sidebar() {
   return (
-  <main /* className='space-toggle'*/>
+  <main  className='space-toggle'>
         <header className='header space-toggle'>
           <div className='header-toggle'>
            <i className="fas fa-bars"></i>
