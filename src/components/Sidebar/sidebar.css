@@ -13,6 +13,11 @@
     box-sizing: border-box;
 
 }
+html,
+body {
+  background-color: rgb(255, 255, 255) !important;
+  
+}
 
 a{
     text-decoration: none;
@@ -32,34 +37,14 @@ main{
 
 }
 
-.header{
-position: fixed;
-top: 0;
-left: 0;
-height: var(--header-height);
-width: 16%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: var(--white-color);
-padding: 0 1rem;
-transition: .5s;
-margin-left: 50px;
-}
 
-.header-toggle{
-    font-size: 1.25rem;
-    cursor: pointer;
-    color: white;
-    
-}
 
 .sidebar{
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 16%;
+    width: 18%;
     background-color: var(--first-color);
     padding-top: 1rem;
     transition: .5s;
@@ -76,50 +61,38 @@ margin-left: 50px;
    
 }
 
-.nav-logo, .nav-link{
-display: grid;
-grid-template-columns: max-content max-content;
-column-gap: 2rem;
-padding: 0.5rem 0 2rem 1.5rem;
 
-}
 
-.nav-logo{
-    margin-bottom: 2rem;
-    margin-left: 50px;
-}
 
-.nav-logo-icon, .nav-link-icon{
-    font-size: 1.25rem;
+
+ .nav-link-icon{
+    font-size: 1rem;
     color: aquamarine;
     cursor: pointer;
 }
-.nav-logo-name, .nav-logo-name-2{
-    font-weight: 700;
-    color: var(--white-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
 
-    
+ .nav-link-icon2{
+  font-size: 1rem;
+  color: #ff0000;
+  cursor: pointer;
 }
 
-.nav-logo-name{
-    color: aquamarine;
-}
 
-.nav-link{
-    position: relative;
+
+
+.nav-link1{
+  
     color: white;
     transition: 0.5s;
-    margin-bottom: 0rem;
-    margin-top: 0;
+    border-radius: 5px;
+    padding: 0.3rem;
+    cursor: pointer;
+  
 
 }
 
-.nav-link:hover{
-    color: white;
+.nav-link1:hover{
+    color: rgb(0, 0, 0);
     background-color: #54f6bbe4;
 
 }

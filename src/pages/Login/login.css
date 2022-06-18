@@ -1,8 +1,4 @@
-html,
-body {
-  height: 100%;
-  background-color: rgb(0, 0, 0);
-}
+
 
 
 .body {
@@ -10,13 +6,16 @@ body {
     display: flex;
     align-items: center;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 140px;
+    background-color: rgb(0, 0, 0);
    
   }
   
   .form-signin {
-    max-width: 330px;
+    max-width: 370px;
     padding: 15px;
+
+   
   
   }
   
