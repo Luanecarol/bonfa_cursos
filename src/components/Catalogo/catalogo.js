@@ -1,7 +1,7 @@
 import './catalogo.css';
-import React from 'react';
 
-function Catalogo(){
+
+export function Catalogo(){
 return(
     <div className='container'>
         <span className='tittle-container'>Catálogo de Cursos</span>
@@ -65,4 +65,3 @@ return(
 
 
 
-export default Catalogo;

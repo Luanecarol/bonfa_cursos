@@ -1,7 +1,7 @@
-import React from 'react';
+
 import './integracoes.css';
 
-function integracoes () {
+export function Pay() {
     return (
    <div className='container'>
   <div className='container-text'>
@@ -20,4 +20,3 @@ function integracoes () {
 
     )}
 
-    export default integracoes;

@@ -1,7 +1,7 @@
-import React from 'react';
+
 import './dashboard.css';
 
-function Dashboard () {
+export function Dashboard () {
     return (
  <div className='container'>
      <div className='tittle'><span className='tittle-1'>Dashboard</span></div>
@@ -118,4 +118,4 @@ function Dashboard () {
 
 }
 
-export default Dashboard;
+

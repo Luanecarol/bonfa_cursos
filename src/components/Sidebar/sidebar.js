@@ -21,6 +21,7 @@ export function Sidebar() {
               </div>
               
               <div className=' m-4 text-white '>
+                
               <div  className='mt-3 nav-link1'> 
               <i className="fa-solid fa-chart-column nav-link-icon "></i> 
               <span className='mx-2'>DASHBOARD</span>

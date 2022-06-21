@@ -1,7 +1,7 @@
 import React from 'react';
 import './planos.css';
 
-function Planos () {
+export function Planos () {
     return (
 <div className='container'>
     <div className='tittle'><span >PLANOS</span></div>
@@ -47,4 +47,3 @@ function Planos () {
 </div>
     )
 }
-export default Planos;
