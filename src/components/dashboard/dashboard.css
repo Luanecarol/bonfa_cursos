@@ -1,43 +1,12 @@
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body,html {
+    overflow-x: hidden !important;
+    
 }
-
-.container{
+.container1{
     background: white;  
     float: right;  
-    width: 84%;
+    width: 80%;
     height: 100vh;
-    padding-top: 20px;
-}
-
-.tittle-1{
-    color: slategray;
-    padding-top: 30px;
-    padding-left: 50px;
-    font-size: 45px;
-    position: relative;
-}
-
-.graph{
-    width:30%;
-    padding-left: 47px;
-}
-
-.tittle-graph{
-    color: slategray;
-    padding-top: 30px;
-    padding-left: 2px;
-    font-size: 22px;
-}
-
-.subtittle-graph{
-    padding-left: 4px;
-    border-style:solid;
-    border-width: 1px;
-    border-bottom-width: 0px;
-    border-radius: 4px;
-    border-color: slategrey;
+   
 }
 
