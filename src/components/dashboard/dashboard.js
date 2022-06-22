@@ -48,7 +48,7 @@ export function Dashboard () {
         <Sidebar />
         <div className='container1'>
         
-           <h1 >Dashboard</h1>
+           <h1 className='fw-bold' >Dashboard</h1>
        
 
            <div className='mt-3'>
