@@ -11,7 +11,7 @@ export function Planos () {
            <h1 className='fw-bold'>Planos</h1>
             <p className='fs-3'>Crie seus funis de venda e deixe a entrega com a gente!</p>
 
-           <section class="pricing ">
+           <section class="pricing aa">
   <div class="">
     <div class="row">
      

@@ -9,6 +9,7 @@ import { Pay } from "../components/Integracoes/Pay";
 import { Planos } from "../components/Planos/planos";
 import { Sidebar } from "../components/Sidebar/sidebar";
 import { Dashboard } from "../components/dashboard/dashboard";
+import {Catalogo } from "../components/Catalogo/catalogo"
 import {Cards } from '../components/Cards/cards'
 
 
@@ -19,7 +20,9 @@ export function Rotas(){
           <Route path="/" element={<Cards />} />
           <Route path="dashboard" element={<Dashboard />} />
 
-          <Route path="Planos" element={<Planos />} />
+          <Route path="planos" element={<Planos/>} />
+          <Route path="catalogo" element={<Catalogo />} />
+        
       
           
           

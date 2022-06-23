@@ -1,62 +1,117 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { Sidebar } from '../Sidebar/sidebar';
 import './catalogo.css';
 
 
 export function Catalogo(){
 return(
-    <div className='container'>
-        <span className='tittle-container'>Catálogo de Cursos</span>
-        
-        <span className='container-subtittle'>Selecione os cursos que <br/>irão para sua Área de Membros</span>
-       <div className='container-subtittle-1'><span>Categoria<i class="fa-solid fa-caret-down icon-seta"></i></span></div>
-        <div className='text-div-card'>Marketing Digital</div>
-       <div className='container-card'>
+    
+  <>
+  <Sidebar />
+  <div className='container1'>
 
-        <div className='card'>
-            <div className='card-image'></div>
-            
-           <div className='tittle-card'> <span className='text-card'>Google Ads</span>
-            <span className='text-card-1'>34 Aulas 2h54</span></div>
-            <button>+ Adicionar</button>
-            <span><a href=' '>Ver curso<i class="fa-solid fa-arrow-right icon-seta-1"></i></a></span>
+  <h1 className='fw-bold' >Catalogo de Cursos</h1>
+       
 
-         </div>
+       <div className='mt-3'>
+        <p className='fs-3'>Selecione os cursos que irão para a sua Área de Membros</p>
+        </div>
 
-         <div className='card'>
-            <div className='card-image'></div>
-            
-           <div className='tittle-card'> <span className='text-card'>Google Ads</span>
-            <span className='text-card-1'>34 Aulas 2h54</span></div>
-            <button>+ Adicionar</button>
-            <span><a href=' '>Ver curso<i class="fa-solid fa-arrow-right icon-seta-1"></i></a></span>
+        <div class="col-sm-3 ">
+  
+    <select class="form-select border-success" id="specificSizeSelect">
+      <option selected>Categoria</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
 
-         </div>
+ <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
 
-         <div className='card'>
-            <div className='card-image'></div>
-            
-           <div className='tittle-card'> <span className='text-card'>Google Ads</span>
-            <span className='text-card-1'>34 Aulas 2h54</span></div>
-            <button>+ Adicionar</button>
-            <span><a href=' '>Ver curso<i class="fa-solid fa-arrow-right icon-seta-1"></i></a></span>
+  <div className='col'>
+  <div class="card shadow p-1" >
+  <img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" class="card-img-top" height={260}  alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Google Ads</h5>
+    <p className='card-text'>21 aulas 31h:32m</p>
+    <a href="#" class="btn btn-success">Adicionar</a>
+    <a href="#" class="ms-4 link-success">Ver cursos<i class=" ms-2 fa-solid fa-arrow-right text-success"></i></a>
+  </div>
+</div>
 
-         </div>
+  </div>
+
+  <div className='col'>
+  <div class="card shadow p-1" >
+  <img src="https://certificadocursosonline.com/wp-content/uploads/2020/08/Capa-do-Curso-de-Facebook-ADS-1.jpg" class="card-img-top " height={260} alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Google Ads</h5>
+    <p className='card-text'>21 aulas 31h:32m</p>
+    <a href="#" class="btn btn-success">Adicionar</a>
+    <a href="#" class="ms-4 link-success">Ver cursos<i class=" ms-2 fa-solid fa-arrow-right text-success"></i></a>
+  </div>
+</div>
+
+  </div>
+
+  <div className='col'>
+  <div class="card shadow p-1" >
+  <img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" height={260}  class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Google Ads</h5>
+    <p className='card-text'>21 aulas 31h:32m</p>
+    <a href="#" class="btn btn-success">Adicionar</a>
+    <a href="#" class="ms-4 link-success">Ver cursos<i class=" ms-2 fa-solid fa-arrow-right text-success"></i></a>
+  </div>
+</div>
+
+  </div>
+
+   <div className='col'>
+  <div class="card shadow p-1" >
+  <img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" height={260}  class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Google Ads</h5>
+    <p className='card-text'>21 aulas 31h:32m</p>
+    <a href="#" class="btn btn-success">Adicionar</a>
+    <a href="#" class="ms-4 link-success">Ver cursos<i class=" ms-2 fa-solid fa-arrow-right text-success"></i></a>
+  </div>
+</div>
+
+  </div>
+
+  <div className='col'>
+  <div class="card shadow p-1" >
+  <img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Google Ads</h5>
+    <p className='card-text'>21 aulas 31h:32m</p>
+    <a href="#" class="btn btn-success">Adicionar</a>
+    <a href="#" class="ms-4 link-success">Ver cursos<i class=" ms-2 fa-solid fa-arrow-right text-success"></i></a>
+  </div>
+</div>
+
+  </div>
+
+  <div className='col'>
+  <div class="card shadow p-1" >
+  <img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Google Ads</h5>
+    <p className='card-text'>21 aulas 31h:32m</p>
+    <a href="#" class="btn btn-success">Adicionar</a>
+    <a href="#" class="ms-4 link-success">Ver cursos<i class=" ms-2 fa-solid fa-arrow-right text-success"></i></a>
+  </div>
+</div>
+
+  </div>
+
+ </div>
+
 
        </div>
-
-
-   <div className='suport'>       
-     <span className='suport-text'>Suporte <br/> Estamos Online</span>
-     <span> <i className="fa-solid fa-user-graduate icon-delete"></i></span>
-    
-   
-   </div>
-
-
-
-
-
-
-    </div>
+  </>
 
 
 

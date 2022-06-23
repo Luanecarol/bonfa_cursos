@@ -34,6 +34,7 @@ code {
 
 .btn-success {
   background-color: #09DAB3 !important;
+  border: none;
 }
 .btn-outline-success {
   color: #09DAB3 !important;
@@ -46,5 +47,9 @@ code {
 
 .link-success {
   color: #09DAB3 !important;
+}
+
+.border-success {
+  border-color: #09DAB3 !important;
 }
 

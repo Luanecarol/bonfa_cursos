@@ -57,9 +57,9 @@ export function Dashboard () {
     <form class="row mt-3 mb-2">
 
 
-<div class="col-sm-3 ">
+<div class="col-3 ">
   
-    <select class="form-select" id="specificSizeSelect">
+    <select class="form-select border-success " id="specificSizeSelect">
       <option selected>Área</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -67,9 +67,9 @@ export function Dashboard () {
     </select>
   </div>
 
-  <div class="col-sm-3">
+  <div class="col-3">
     
-    <select class="form-select" id="specificSizeSelect">
+    <select class="form-select border-success " id="specificSizeSelect">
       <option selected>Data</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -81,7 +81,7 @@ export function Dashboard () {
 </form>
 
 
-     <div className="row ">
+     <div className="row row-cols-md-2 row-cols-sm-1">
         <div className='col-6 '>
             <Chart className='shadow' options={options} series={series} type="area"  height={260} />
             </div>
@@ -97,9 +97,9 @@ export function Dashboard () {
         <form class="row mt-3">
 
 
-        <div class="col-sm-3">
+        <div class="col-3">
 
-        <select class="form-select" id="specificSizeSelect">
+        <select class="form-select border-success " id="specificSizeSelect">
         <option selected>Área</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -107,9 +107,9 @@ export function Dashboard () {
         </select>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-3">
 
-        <select class="form-select" id="specificSizeSelect">
+        <select class="form-select border-success " id="specificSizeSelect">
         <option selected>Data</option>
         <option value="1">One</option>
         <option value="2">Two</option>
