@@ -5,93 +5,66 @@ import { Sidebar } from '../Sidebar/sidebar';
 export function Cards(){
 return(
 
-  <><Sidebar /><div className='container'>
-    <span className='tittle-container'>Área de membros</span>
-    <span className='container-add'>+ Criar Nova Área</span>
-    <span className='container-subtittle'>Suas Áreas De Membros</span>
+  <><Sidebar /><div className='container1'>
+    <h1 className='fw-bold'>Área de membros</h1>
+    <p className='fs-3'>Suas Áreas De Membros</p>
+    <span className=' container-add'>+ Criar Nova Área</span>
 
-    <div className='container-card'>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
 
-      <div className='card'>
-        <div className='card-image'><i className="fa-solid fa-camera fa-1x icon-image"></i></div>
-        <span className='text-card'>ADschool Prime</span>
-        <span><i className="fa-solid fa-user-graduate icon-arrow"></i></span>
-        <span><i className="fa-solid fa-user-graduate icon-edit"></i></span>
-
-        <div className='container-icon'>
-          <span> <i className="fa-solid fa-user-graduate icon-student"></i></span>
-          <span className='icon-student-text'>354</span>
-          <span> <i className="fa-solid fa-user-graduate icon-hand"></i></span>
-          <span className='icon-hand-text'>4k</span>
-
-          <div>
-            <span> <i className="fa-solid fa-user-graduate icon-anexo"></i></span>
-            <span> <i className="fa-solid fa-user-graduate icon-copy"></i></span>
-            <span> <i className="fa-solid fa-user-graduate icon-delete"></i></span>
-          </div>
-        </div>
-
-      </div>
-
-      <div className='card'>
-        <div className='card-image'><i className="fa-solid fa-camera fa-1x icon-image"></i></div>
-        <span className='text-card'>ADschool Prime</span>
-        <span><i className="fa-solid fa-user-graduate icon-arrow"></i></span>
-        <span><i className="fa-solid fa-user-graduate icon-edit"></i></span>
-
-        <div className='container-icon'>
-          <span> <i className="fa-solid fa-user-graduate icon-student"></i></span>
-          <span className='icon-student-text'>354</span>
-          <span> <i className="fa-solid fa-user-graduate icon-hand"></i></span>
-          <span className='icon-hand-text'>4k</span>
-
-          <div>
-            <span> <i className="fa-solid fa-user-graduate icon-anexo"></i></span>
-            <span> <i className="fa-solid fa-user-graduate icon-copy"></i></span>
-            <span> <i className="fa-solid fa-user-graduate icon-delete"></i></span>
-          </div>
-        </div>
-
-      </div>
-
-      <div className='card'>
-        <div className='card-image'><i className="fa-solid fa-camera fa-1x icon-image"></i></div>
-        <span className='text-card'>ADschool Prime</span>
-        <span><i className="fa-solid fa-user-graduate icon-arrow"></i></span>
-        <span><i className="fa-solid fa-user-graduate icon-edit"></i></span>
-
-        <div className='container-icon'>
-          <span> <i className="fa-solid fa-user-graduate icon-student"></i></span>
-          <span className='icon-student-text'>354</span>
-          <span> <i className="fa-solid fa-user-graduate icon-hand"></i></span>
-          <span className='icon-hand-text'>4k</span>
-
-          <div>
-            <span> <i className="fa-solid fa-user-graduate icon-anexo"></i></span>
-            <span> <i className="fa-solid fa-user-graduate icon-copy"></i></span>
-            <span> <i className="fa-solid fa-user-graduate icon-delete"></i></span>
-          </div>
-        </div>
-
-      </div>
+      
+      
 
 
-    </div>
+<div className='col'>
+<div class="card shadow p-1" >
+<img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" class="card-img-top" height={260}  alt="..."/>
+<div class="card-body">
+  <h5 class="pr-5 card-title"> Adschool Prime <i class="fa-solid fa-pen"></i> </h5>
+  <a href=" " class=" link-success"><i class="fa-solid fa-user-group"></i>354 </a>
+  <a href=" " class="ms-2 link-success"><i class="fa-solid fa-eye"></i>4k</a>
+  <a href=" " class=" link-success-3"><i class="fa-solid fa-copy"></i><i class="fa-solid fa-share-nodes fa-share"></i><i class="fa-solid fa-trash-can fa-delete"></i> </a>
+
+</div>
+</div>
+</div>
 
 
-    <div className='suport'>
-      <span className='suport-text'>Suporte <br /> Estamos Online</span>
-      <span> <i className="fa-solid fa-user-graduate icon-delete"></i></span>
-      <span> <i className="fa-solid fa-user-graduate icon-delete"></i></span>
+<div className='col'>
+<div class="card shadow p-1" >
+<img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" class="card-img-top" height={260}  alt="..."/>
+<div class="card-body">
+  <h5 class="pr-5 card-title"> Adschool Prime <i class="fa-solid fa-pen"></i> </h5>
+  <a href=" " class=" link-success"><i class="fa-solid fa-user-group"></i>354 </a>
+  <a href=" " class="ms-2 link-success"><i class="fa-solid fa-eye"></i>4k</a>
+  <a href=" " class=" link-success-3"><i class="fa-solid fa-copy"></i><i class="fa-solid fa-share-nodes fa-share"></i><i class="fa-solid fa-trash-can fa-delete"></i> </a>
 
-    </div>
+</div>
+</div>
+</div>
 
 
 
 
 
+<div className='col'>
+<div class="card shadow p-1" >
+<img src="https://canaldemarketingdigital.com.br/wp-content/uploads/2021/05/curso-googleads-canal-de-marketing-digital-800x445.png" class="card-img-top" height={260}  alt="..."/>
+<div class="card-body">
+  <h5 class="pr-5 card-title"> Adschool Prime <i class="fa-solid fa-pen"></i> </h5>
+  <a href=" " class=" link-success"><i class="fa-solid fa-user-group"></i>354 </a>
+  <a href=" " class="ms-2 link-success"><i class="fa-solid fa-eye"></i>4k</a>
+  <a href=" " class=" link-success-3"><i class="fa-solid fa-copy"></i><i class="fa-solid fa-share-nodes fa-share"></i><i class="fa-solid fa-trash-can fa-delete"></i> </a>
 
-  </div></>
+</div>
+</div>
+</div>
+
+  </div>
+
+</div>
+
+  </>
 
 
 
