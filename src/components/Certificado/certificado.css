@@ -1,78 +1,31 @@
-.container{
-    width: 70%;
-    height: 100%;
-    background-color: black;
-    float: right;
-}
-
-.container-text{ 
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-bottom: 20px;
+.container1{
+    background: black;  
+    float: right;  
+    width: 82%;
     height: 100vh;
+    margin-top: -2rem;
+    margin-left:0px;
+    padding:30px;
+   
 }
 
-.tittle{
-    font-size: 50px;
-    color: white;
-
-
-}
-
-.tittle-2{
-    font-size: 23px;
-    color: white;
-    padding-top: 80px;
-    padding-bottom: 15px;
-}
-
-input{
-    padding: 8px;
-    margin-right: 6px;
-    border-radius: 6px;
+h1, p{
+   margin-top:10px;
+    color:white;
 }
 
 button{
-    background-color: aqua;
+    background-color:#09DAB3;
     font-size: 15px;
     font-weight: bold;
+    margin-top:5px;
     padding: 5px 20px;
-    border-radius: 6px;
+    border:none;
+    color:white;
 
 }
 
-.input-div{
-    margin-top: px;
-    
-}
-
-.input-1{
-    width: 35px;
-    height:9px;
-}
-
-.input-2{
-    background-color: rgb(213, 204, 204);
-    color: darkgray;
-    width: 15px;
-    height:9px;
-    margin-left: -5px;
-    margin-right: 9px;
 
 
-}
 
-.box-1{
-    width: 350px;
-    height: 250px;
-    background-color: white;
-
-}
-
-.modelo{
-    padding-top: 30px;
-}
-.icon-pen{
-    color: aqua;
-}
 

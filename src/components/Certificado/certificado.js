@@ -1,26 +1,41 @@
-import React from 'react';
+import { Sidebar } from '../Sidebar/sidebar';
 import './certificado.css';
+import cert from './cert.png';
 
-function certificado () {
-    return (
-   <div className='container'>
-  <div className='container-text'>
-  <div className='tittle'><span>Certificados</span></div>
-   <div className='tittle-2'><span>Enviar Certificado quando <br/> o aluno assistir</span></div>
-   <div className='input-div'><input className='input-1' type="text" name="name" placeholder='70'/>
-   <input className='input-2' type="text" name="name" placeholder='%'/>
-  <button>Salvar<i class="fa-solid fa-arrow-right icon-seta"></i></button></div>
-    <span style={{color:"white"}}>Das aulas</span>
 
-    <div className='modelo'>
-        <p style={{color:"white",fontSize:25}}>Modelo De Certificado</p>
-        <div className='box-1'></div>
+export function Certificado(){
+return(   
+    <>
+    <Sidebar />
+   
+    <div className='container1'>
+    <h1 className='fw-bold' >Certificados</h1>
+
+    <div className='mt-3'>
+        <p className='fs-3'>Enviar o certificado quando o aluno assitir:</p>
+        </div>
+        <div class="col-sm-2 ">
+  
+  <select class="form-select border-success" id="specificSizeSelect">
+    <option selected>70 %</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+<div className='mt-3'>
+        <p className='fs-3'>Modelo de certificado:</p>
+        </div>
+
+        <img src={cert} alt="..." height={240}/>
+
+
+ <div> <button>Salvar</button></div>
+    
 
     </div>
 
-    </div>
- </div>
-
+    
+ </>
     )}
 
-    export default certificado;
