@@ -1,25 +1,55 @@
-import React from 'react';
+
+import { Sidebar } from '../Sidebar/sidebar';
 import './dominios.css';
 
-function dominios () {
+export function Dominios () {
     return (
-   <div className='container'>
-  <div className='container-text'>
-  <div className='tittle'><span>Domínios</span></div>
-   <div className='tittle-2'><span>Subdomínio eadfy</span></div>
-   <div className='input-div'><input className='input-1' type="text" name="name" placeholder='adschool'/>
-   <input className='input-2' type="text" name="name" placeholder='.eadfy.com'/>
-  <button>Salvar<i class="fa-solid fa-arrow-right icon-seta"></i></button></div>
-    <div className='tittle-2'><span >Domínio Próprio</span></div>
-<div></div>
-<div>
-    <input className='input-3' type="text" name="name" placeholder='seu domínio'/>
-    <button>Gerar DNS<i class="fa-solid fa-arrow-right icon-seta"></i></button></div>
-    <a className='link'href=' '>Verificar<i class="fa-solid fa-arrow-right icon-seta-1"></i></a>
+        <>
+        <Sidebar />
+        <div className='container1'>
+        
+        <h1 className='fw-bold' >Domínios</h1>
+    
+
+        <div className='mt-5'>
+        <h5>Subdomínio eadfy</h5>
+
+        <div className='row mt-4 mb-2'>
+    <div class="col-2 ">
+    <input class="form-control"  placeholder="adschool" />
+    </div>
+    <div class="col-2 ">
+    <input class="form-control"  placeholder=".adschool.com" disabled/>
+    </div>
+
+        <div class="col-3">
+        <button type="button" class="btn bg-success px-4">Salvar</button>
+        <i class="fa-solid fa-link link-success ms-3 fs-3"></i>
+        </div>
+  </div>
+ 
+
+  <h5 className='mt-5'>Domínio próprio</h5>
+
+  <div className='row mt-4 mb-2'>
+    <div class="col-3 ">
+    <input class="form-control"  placeholder="Seu domínio" />
+    </div>
+
+        <div class="col-3">
+        <button type="button" class="btn bg-success px-4">Gerar Dns</button>
+        <i class="fa-solid fa-link link-success ms-3 fs-3"></i>
+        </div>
+
+  </div>
+
 </div>
-   </div>
+
+     </div>
+       
+        </>
 
     )}
 
 
-    export default dominios;
+  

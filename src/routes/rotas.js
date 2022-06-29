@@ -11,6 +11,8 @@ import { Sidebar } from "../components/Sidebar/sidebar";
 import { Dashboard } from "../components/dashboard/dashboard";
 import {Catalogo } from "../components/Catalogo/catalogo"
 import {Cards } from '../components/Cards/cards'
+import { Suport } from '../components/Suport/suport'
+import { Dominios } from "../components/Dominios/dominios";
 
 
 export function Rotas(){
@@ -22,6 +24,9 @@ export function Rotas(){
 
           <Route path="planos" element={<Planos/>} />
           <Route path="catalogo" element={<Catalogo />} />
+          <Route path="suporte" element={<Suport />} />
+          <Route path="integracao" element={<Pay /> } />
+          <Route path="dominio" element={<Dominios />} />
         
       
           
