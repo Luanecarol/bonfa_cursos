@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
@@ -40,13 +41,13 @@ code {
   background-color: #09DAB3 !important;
   border: none;
 }
-.btn-outline-success {
+.btn-outline-secondary {
   color: #09DAB3 !important;
   border-color: #09DAB3 !important;
 
 }
-.btn-outline-success:hover {
-  background-color: black ;
+.btn-outline-secondary:hover {
+  background-color: black;
 }
 
 .link-success {

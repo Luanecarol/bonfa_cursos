@@ -8,7 +8,7 @@ return(
     
   <>
   <Sidebar />
-  <div className='container1'>
+  <div className='container2'>
 
   <h1 className='fw-bold' >Catalogo de Cursos</h1>
        

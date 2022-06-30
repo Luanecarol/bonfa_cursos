@@ -1,5 +1,5 @@
-.container1{
-    background: black;  
+.container2{
+   
     float: right;  
     width: 82%;
     height: 100vh;
@@ -11,7 +11,7 @@
 
 h1, p{
    margin-top:10px;
-    color:white;
+  
 }
 
 button{

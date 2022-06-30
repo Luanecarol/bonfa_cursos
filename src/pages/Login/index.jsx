@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export function Login() {
   return (
-<div className="body ">
+<div className=" body ">
     <main class="form-signin w-100 m-auto mt-5">
       <form >
         <img class="mb-4 mx-5" src={logo} alt="" />
@@ -38,7 +38,7 @@ export function Login() {
         <Link to="dashboard">
         <button class="w-100 btn btn-lg btn-success mb-3" type="submit">Entrar</button>
         </Link>
-        <button class="w-100 btn btn-lg btn-outline-success" type="submit">Fazer cadastro</button>
+        <button class="w-100 btn btn-lg btn-outline-secondary" type="submit">Fazer cadastro</button>
       
       </form>
     </main>

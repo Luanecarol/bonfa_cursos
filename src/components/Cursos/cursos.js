@@ -1,39 +1,136 @@
 import './cursos.css';
+import { Sidebar } from '../Sidebar/sidebar';
+import {Accordion } from 'react-bootstrap';
 
-function Cursos(){
+export function Cursos(){
+ 
+  
     return(
-<div className='container'>
-  <div className='header'>
-      <button className='button-add'> + Adicionar Cursos </button>
-      <span className='personalize'>Personalisar</span>
-      <i class="fa-solid fa-pen icon-edit"></i>
-  </div>
-       <div className='container-tittle-info'>
-     <span className='tittle-info'>32 aulas   2h54</span>
-     <i class="fa-solid fa-pen icon-edit-info"></i>
-     </div>
+      
+            <>
+            <Sidebar />
 
-  <div className='container-card'>
-      <div className='card'>
-      <i class="fa-solid fa-pen icon-edit-info-2"></i>
-      </div>
+            <div className='container2 aulas2'>
 
-      <div className='card'>
-      <i class="fa-solid fa-pen icon-edit-info-2"></i>
-      </div>
 
-      <div className='card'>
-      <i class="fa-solid fa-pen icon-edit-info-2"></i>
-      </div>
+   
+     
 
+         <div class="row align-items-start">
+    <div class="col-3">
+    <div className='aulas '>
+        <h4>Google</h4>
+                <Accordion defaultActiveKey="0" flush>
+                    <Accordion.Item eventKey="0">
+                        <Accordion.Header>Modulo 1</Accordion.Header>
+                        <Accordion.Body>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        </ul>
+                 
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="1">
+                        <Accordion.Header>Modulo 2</Accordion.Header>
+                        <Accordion.Body>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                        </ul>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    </Accordion>
+
+                
+            
+
+   
+         </div>
+    </div>
+
+
+    <div class="col">
+        
+    <div class="row ">
+        <div class="col-4">
+        <button type="button" class="btn btn-md btn-success">+ Adicionar modulo</button>
+        </div>
+        <div class="col-4">
+        <button type="button" class="btn btn-md btn-outline-secondary">+ Adicionar aula</button>
+        </div>
       
   </div>
 
+  <div class="row mt-3">
+        <div class="col-6">
+        <span className='fs-3'>Módulo 01</span>
+        </div>
+        <div class="col-2">
+        <span className='fs-3 fw-semibold'>Apostila</span>
+        </div>
+        <div class="col-3">
+        <span className='fs-3'>Materiais extras</span>
+        </div>
+  </div>
 
+  <div class="row mt-3">
+        <div class="col">
+        <span className="fs-4 fw-bold">Aula 02</span>
+        </div>
+  </div>
+
+  <div class="row mt-3">
+    
+        <div class="col">
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube-nocookie.com/embed/we3VEI5pmqo"  title="YouTube video" allowfullscreen></iframe>
+            </div>
+
+        </div>
+      
+  </div>
+
+  <div class="row mt-3">
+        <div class="col">
+     
+        </div>
+        <div class="col-2">
+        <span className='fs-3 fw-semibold'><i class="mx-1 fa fa-arrow-left"></i>Anterior </span>
+        </div>
+        <div class="col-2">
+        <span className='fs-3'>Proxima <i class="mx-1 fa fa-arrow-right"></i></span>
+        </div>
+        <div class="col">
+    
+        </div>
+  </div>
+
+
+  <div class="form-floating mt-5 mb-5">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" ></textarea>
+  <label for="floatingTextarea2">Comments</label>
 </div>
+
+    </div>
+   
+    </div>
+         
+         </div>
+  
+
+                
+        </>
+       
+    
 
 
     )
 }
 
-export default Cursos;
