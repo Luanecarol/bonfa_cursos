@@ -21,24 +21,23 @@ export function Cursos(){
                         <Accordion.Header>Modulo 1</Accordion.Header>
                         <Accordion.Body>
                         <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">aula 1</li>
+                        <li class="list-group-item">aula 2</li>
+                        <li class="list-group-item">aula 3</li>
+                        <li class="list-group-item">aula 4</li>
+                        <li class="list-group-item">aula 5</li>
                         </ul>
-                 
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>Modulo 2</Accordion.Header>
                         <Accordion.Body>
                         <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item">aula 1</li>
+                        <li class="list-group-item">aula 2</li>
+                        <li class="list-group-item">aula 3</li>
+                        <li class="list-group-item">aula 4</li>
+                        <li class="list-group-item">aula 5</li>
                         </ul>
                         </Accordion.Body>
                     </Accordion.Item>
