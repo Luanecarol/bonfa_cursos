@@ -30,8 +30,8 @@ export function Rotas(){
           <Route path="planos" element={<Planos/>} />
 
           <Route path="membro" element={<Cards />} />
-          <Route path="curso" element={<Cursos />} />
           <Route path="suporte" element={<Suport />} />
+          <Route path="curso" element={<Cursos />} /> 
           <Route path="integracao" element={<Pay /> } />
           <Route path="dominio" element={<Dominios />} />
           <Route path="certificado" element={<Certificado />} />

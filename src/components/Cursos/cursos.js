@@ -12,10 +12,6 @@ export function Cursos(){
 
             <div className='container2 aulas2'>
 
-
-   
-     
-
          <div class="row align-items-start">
     <div class="col-3">
     <div className='aulas '>

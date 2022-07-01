@@ -7,12 +7,11 @@
 
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+.bar {
+   
+    display: none;
 }
+
 html,
 body {
   background-color: rgb(255, 255, 255) !important;

@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from 'react-router-dom';
 import { Sidebar } from '../Sidebar/sidebar';
 import './catalogo.css';
 
@@ -36,7 +37,10 @@ return(
     <h5 class="card-title">Google Ads</h5>
     <p className='card-text'>21 aulas 31h:32m</p>
     <a href="#" class="btn btn-success">Adicionar</a>
+    <Link to="/curso">
     <a href="#" class="ms-4 link-success">Ver cursos<i class=" ms-2 fa-solid fa-arrow-right text-success"></i></a>
+    </Link>
+   
   </div>
 </div>
 
