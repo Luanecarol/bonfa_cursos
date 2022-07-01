@@ -1,6 +1,6 @@
 body,html {
     overflow-x: hidden !important;
-   
+ 
     
 }
 .container1{
@@ -8,7 +8,7 @@ body,html {
     float: right;  
     width: 80%;
     height: 100vh;
-    margin-top: -2rem;
+    margin-top: -4rem;
    
 }
 
