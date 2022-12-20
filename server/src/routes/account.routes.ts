@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { generateUsername } from 'unique-username-generator';
+import { validateToken } from '../middlewares/authMiddleware';
 import { OrderEventWebHook } from '../models/OrderEventWebHook';
 import {
   GetAccountByUsername,
@@ -23,6 +24,10 @@ accountRoutes.post('/create_account', async (req, res) => {
     }
   }
   return res.status(400).json();
+});
+
+accountRoutes.get('/teste', validateToken, (req, res) => {
+  return res.status(200).json();
 });
 
 export default accountRoutes;

@@ -1,8 +1,12 @@
+import dotenv from 'dotenv';
 import Express, { json } from 'express';
+import path from 'path';
 import routes from './src/routes';
 
 const app = Express();
-console.log(process.env.NODE_ENV);
+dotenv.config({
+  path: path.resolve('.env'),
+});
 app.use(json());
 
 app.use(routes);

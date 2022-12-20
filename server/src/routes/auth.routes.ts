@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { LoginDto } from '../dto/loginDTO';
 import { GetAccountByUsername } from '../repositories/AccountRepository';
+import { generateToken } from '../services/authService';
 
 const authRouter = Router();
 
@@ -23,7 +24,7 @@ authRouter.post('/login', async (req, res) => {
       erro: 'Usuário ou senha incorretos',
     });
 
-  return res.status(200).json({});
+  return res.status(200).json({ token: generateToken(account) });
 });
 
 export default authRouter;
