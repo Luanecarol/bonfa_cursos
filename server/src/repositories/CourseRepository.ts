@@ -1,28 +1,27 @@
-import { ObjectId } from 'mongodb';
-import { Account } from '../models/Account';
-import { GetMongoCollection } from '../services/mongoConnectionService';
+import AppDataSource from '../../dataSource';
+import Account from '../entities/Account';
+import Course from '../entities/Course';
+
+const CourseRepo = AppDataSource.getRepository(Course);
+const AccountRepo = AppDataSource.getRepository(Account);
 
 const SaveCourse = async (
-  id: ObjectId,
+  accountId: number,
   title: string,
   description: string,
   category: string
 ) => {
-  const collection = await GetMongoCollection('Account');
-  let account = (await collection.findOne({ _id: id })) as Account;
+  const account = await AccountRepo.findOne({ where: { id: accountId } });
 
-  if (!account.courses) {
-    account = { ...account, courses: [] };
+  if (account) {
+    const course = new Course();
+    course.category = category;
+    course.name = title;
+    course.description = description;
+    course.account = account;
+
+    await CourseRepo.save(course);
   }
-
-  account.courses.push({
-    title,
-    description,
-    category,
-    videos: [],
-  });
-
-  await collection.updateOne({ _id: id }, { $set: account });
 };
 
 export { SaveCourse };

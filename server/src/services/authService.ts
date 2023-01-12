@@ -1,12 +1,12 @@
 import jsonwebtoken from 'jsonwebtoken';
-import { Document, WithId } from 'mongodb';
+import Account from '../entities/Account';
 
 const privateKey = process.env.PRIVATE_KEY || '';
 
-const generateToken = (account: WithId<Document>) =>
+const generateToken = (account: Account) =>
   jsonwebtoken.sign(
     {
-      user: account._id,
+      user: account.id,
     },
     privateKey
   );

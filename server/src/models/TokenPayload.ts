@@ -1,3 +1,3 @@
 export interface TokenPayload {
-  user: string;
+  user: number;
 }

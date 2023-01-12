@@ -1,8 +1,8 @@
 import Joi from 'joi';
-import { Course } from '../models/Course';
+import Course from '../entities/Course';
 
 export default Joi.object<Course>({
-  title: Joi.string().min(3).required(),
+  name: Joi.string().min(3).required(),
   category: Joi.string().min(3).required(),
   description: Joi.string().min(3).required(),
 });

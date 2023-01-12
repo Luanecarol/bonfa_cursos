@@ -4,11 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev index.ts NODE_ENV=development"
+    "start": "ts-node-dev index.ts NODE_ENV=development",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.11",
     "typescript": "^4.9.4"
   },
   "devDependencies": {

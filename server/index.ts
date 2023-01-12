@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import Express, { json } from 'express';
 import path from 'path';
+import 'reflect-metadata';
 import routes from './src/routes';
 
 const app = Express();

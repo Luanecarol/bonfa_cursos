@@ -14,6 +14,7 @@ authRouter.post('/login', async (req, res) => {
     });
 
   const account = await GetAccountByUsername(body.username);
+  console.log(account);
   if (!account)
     return res.status(404).json({
       erro: 'Usuário ou senha incorretos',

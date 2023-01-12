@@ -1,35 +1,35 @@
-import { ObjectId } from 'mongodb';
-import { GetMongoCollection } from '../services/mongoConnectionService';
+import AppDataSource from '../../dataSource';
+import Account from '../entities/Account';
+
+const AccountRepo = AppDataSource.getRepository(Account);
 
 const SaveAccount = async (username: string, password: string) => {
-  const collection = await GetMongoCollection('Account');
+  const account = new Account();
+  account.username = username;
+  account.password = password;
 
-  await collection.insertOne({
-    username,
-    password,
-  });
+  AccountRepo.save(account);
 };
 
 const GetAccountByUsername = async (username: string) => {
-  const collection = await GetMongoCollection('Account');
-
-  return await collection.findOne({
-    username,
+  const account = await AccountRepo.findOne({
+    where: { username },
   });
+
+  return account;
 };
 
-const GetAccountById = async (id: string) => {
-  const collection = await GetMongoCollection('Account');
+const GetAccountById = async (id: number) =>
+  await AccountRepo.findOne({ where: { id } });
 
-  return await collection.findOne({
-    _id: new ObjectId(id),
-  });
-};
+const ChangePassword = async (id: number, password: string) => {
+  const account = await AccountRepo.findOne({ where: { id } });
 
-const ChangePassword = async (id: ObjectId, password: string) => {
-  const collection = await GetMongoCollection('Account');
+  if (account) {
+    account.password = password;
 
-  await collection.findOneAndUpdate({ _id: id }, { $set: { password } });
+    await AccountRepo.save(account);
+  }
 };
 
 export { SaveAccount, GetAccountByUsername, ChangePassword, GetAccountById };
