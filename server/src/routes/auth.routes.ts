@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { LoginDto } from '../dto/loginDTO';
+import { LoginDto } from '../models/loginRequest';
 import { GetAccountByUsername } from '../repositories/AccountRepository';
 import { generateToken } from '../services/authService';
 
