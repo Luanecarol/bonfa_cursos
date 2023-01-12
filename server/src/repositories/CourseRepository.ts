@@ -3,25 +3,43 @@ import Account from '../entities/Account';
 import Course from '../entities/Course';
 
 const CourseRepo = AppDataSource.getRepository(Course);
-const AccountRepo = AppDataSource.getRepository(Account);
+
+const getAllCourses = async () => {
+  return await CourseRepo.find({
+    relations: {
+      account: true,
+    },
+  });
+};
+
+const getAllCoursesByAccountId = async (accountId: number) => {
+  return await CourseRepo.find({
+    where: {
+      account: { id: accountId },
+    },
+  });
+};
+
+const getCourseById = (id: number) =>
+  CourseRepo.findOne({
+    where: {
+      id,
+    },
+  });
 
 const SaveCourse = async (
-  accountId: number,
+  account: Account,
   title: string,
   description: string,
   category: string
 ) => {
-  const account = await AccountRepo.findOne({ where: { id: accountId } });
+  const course = new Course();
+  course.category = category;
+  course.name = title;
+  course.description = description;
+  course.account = account;
 
-  if (account) {
-    const course = new Course();
-    course.category = category;
-    course.name = title;
-    course.description = description;
-    course.account = account;
-
-    await CourseRepo.save(course);
-  }
+  await CourseRepo.save(course);
 };
 
-export { SaveCourse };
+export { SaveCourse, getAllCourses, getAllCoursesByAccountId, getCourseById };
