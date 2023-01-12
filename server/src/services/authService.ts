@@ -7,6 +7,7 @@ const generateToken = (account: Account) =>
   jsonwebtoken.sign(
     {
       user: account.id,
+      role: account.role,
     },
     privateKey
   );

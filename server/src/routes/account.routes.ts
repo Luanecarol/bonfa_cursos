@@ -4,6 +4,7 @@ import jsonwebtoken from 'jsonwebtoken';
 import path from 'path';
 import { generateUsername } from 'unique-username-generator';
 import { SplitBearerToken } from '../helpers/TokenHelper';
+import { validateTokenAdmin } from '../middlewares/AuthAdminMiddleware';
 import { validateToken } from '../middlewares/authMiddleware';
 import ChangePasswordRequest from '../models/ChangePasswordRequest';
 import { OrderEventWebHook } from '../models/OrderEventWebHook';
@@ -12,6 +13,7 @@ import {
   ChangePassword,
   GetAccountById,
   GetAccountByUsername,
+  getAllAccounts,
   SaveAccount,
 } from '../repositories/AccountRepository';
 import ChangePasswordValidator from '../validators/ChangePasswordValidator';
@@ -21,6 +23,23 @@ dotenv.config({
 const privateKey = process.env.PRIVATE_KEY;
 
 const accountRoutes = Router();
+
+accountRoutes.get('/', validateTokenAdmin, async (req, res) => {
+  const accounts = await getAllAccounts();
+
+  return res.status(200).json(accounts);
+});
+
+accountRoutes.get('/:id', validateTokenAdmin, async (req, res) => {
+  const { id } = req.params;
+  const account = await GetAccountById(Number.parseInt(id));
+  if (!account)
+    return res.status(404).json({
+      erro: 'Conta não existe',
+    });
+
+  return res.status(200).json(account);
+});
 
 accountRoutes.post('/create_account', async (req, res) => {
   const username = generateUsername();

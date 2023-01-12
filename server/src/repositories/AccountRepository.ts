@@ -3,6 +3,8 @@ import Account from '../entities/Account';
 
 const AccountRepo = AppDataSource.getRepository(Account);
 
+const getAllAccounts = async () => await AccountRepo.find();
+
 const SaveAccount = async (username: string, password: string) => {
   const account = new Account();
   account.username = username;
@@ -32,4 +34,10 @@ const ChangePassword = async (id: number, password: string) => {
   }
 };
 
-export { SaveAccount, GetAccountByUsername, ChangePassword, GetAccountById };
+export {
+  SaveAccount,
+  GetAccountByUsername,
+  ChangePassword,
+  GetAccountById,
+  getAllAccounts,
+};
