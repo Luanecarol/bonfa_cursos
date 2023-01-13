@@ -4,11 +4,13 @@ import { validateTokenAdmin } from '../middlewares/AuthAdminMiddleware';
 import { validateToken } from '../middlewares/authMiddleware';
 import { GetAccountById } from '../repositories/AccountRepository';
 import {
+  deleteCourse,
   getAllCourses,
   getAllCoursesByAccountId,
   getCourseById,
-  SaveCourse,
+  saveCourse,
 } from '../repositories/CourseRepository';
+import { verifyUser } from '../services/authService';
 import CourseValidator from '../validators/CourseValidator';
 
 const courseRouter = Router();
@@ -53,8 +55,29 @@ courseRouter.post('/save/:accountId', validateToken, async (req, res) => {
 
   if (error) return res.status(400).json(error.details.map((p) => p.message));
 
-  await SaveCourse(account, course.name, course.description, course.category);
+  await saveCourse(account, course.name, course.description, course.category);
   return res.status(200).json();
+});
+
+courseRouter.delete('/delete/:id', validateToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const course = await getCourseById(Number.parseInt(id));
+
+    if (!course)
+      return res.status(404).json({
+        erro: 'Curso não encontrado',
+      });
+
+    if (!verifyUser(course.account, req.headers.authorization!))
+      return res.status(403).json();
+
+    await deleteCourse(course.id);
+
+    return res.status(204).json();
+  } catch (e: any) {
+    return res.status(500).json(e.message);
+  }
 });
 
 export default courseRouter;

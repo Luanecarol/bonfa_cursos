@@ -1,3 +1,4 @@
+import { Equal } from 'typeorm';
 import AppDataSource from '../../dataSource';
 import Account from '../entities/Account';
 import Course from '../entities/Course';
@@ -25,9 +26,12 @@ const getCourseById = (id: number) =>
     where: {
       id,
     },
+    relations: {
+      account: true,
+    },
   });
 
-const SaveCourse = async (
+const saveCourse = async (
   account: Account,
   title: string,
   description: string,
@@ -42,4 +46,15 @@ const SaveCourse = async (
   await CourseRepo.save(course);
 };
 
-export { SaveCourse, getAllCourses, getAllCoursesByAccountId, getCourseById };
+const deleteCourse = async (id: number) =>
+  await CourseRepo.delete({
+    id: Equal(id),
+  });
+
+export {
+  saveCourse,
+  getAllCourses,
+  getAllCoursesByAccountId,
+  getCourseById,
+  deleteCourse,
+};
