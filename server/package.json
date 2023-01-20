@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev index.ts NODE_ENV=development",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "run-migrations": "typeorm migration:run --dataSource ./dataSource.ts"
   },
   "dependencies": {
     "express": "^4.18.2",
