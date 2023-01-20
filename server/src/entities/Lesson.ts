@@ -7,7 +7,10 @@ class Lesson {
   id: number;
 
   @Column({ type: 'varchar', length: 100 })
-  name: string;
+  videoUrl: string;
+
+  @Column({ type: 'varchar', length: 200 })
+  lessonTitle: string;
 
   @ManyToOne(() => Module, (module) => module.lessons)
   module: Module;
