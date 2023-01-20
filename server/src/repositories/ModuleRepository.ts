@@ -27,7 +27,9 @@ const getModuleById = (id: number) =>
       id,
     },
     relations: {
-      course: true,
+      course: {
+        account: true,
+      },
     },
   });
 
