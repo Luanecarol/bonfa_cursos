@@ -19,8 +19,6 @@ const verifyUser = (account: Account, token: string) => {
     SplitBearerToken(token),
     privateKey
   ) as TokenPayload;
-  console.log(payload);
-  console.log(account);
   return account.id == payload.user;
 };
 

@@ -5,6 +5,7 @@ import { validateToken } from '../middlewares/authMiddleware';
 import { GetAccountById } from '../repositories/AccountRepository';
 import {
   deleteCourse,
+  editCourse,
   getAllCourses,
   getAllCoursesByAccountId,
   getCourseById,
@@ -56,6 +57,30 @@ courseRouter.post('/save/:accountId', validateToken, async (req, res) => {
   if (error) return res.status(400).json(error.details.map((p) => p.message));
 
   await saveCourse(account, course.name, course.description, course.category);
+  return res.status(200).json();
+});
+
+courseRouter.put('/update/:id', validateToken, async (req, res) => {
+  const courseUpdated = req.body as Course;
+  const { id } = req.params;
+
+  const course = await getCourseById(Number.parseInt(id));
+
+  if (!course)
+    return res.status(400).json({
+      erro: 'Curso não encontrado',
+    });
+
+  const { error } = CourseValidator.validate(courseUpdated);
+
+  if (error) return res.status(400).json(error.details.map((p) => p.message));
+
+  await editCourse(
+    course.id,
+    courseUpdated.name,
+    courseUpdated.description,
+    courseUpdated.category
+  );
   return res.status(200).json();
 });
 

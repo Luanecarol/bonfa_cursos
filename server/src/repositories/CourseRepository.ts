@@ -46,6 +46,25 @@ const saveCourse = async (
   await CourseRepo.save(course);
 };
 
+const editCourse = async (
+  id: number,
+  title: string,
+  description: string,
+  category: string
+) => {
+  const course = new Course();
+  course.category = category;
+  course.name = title;
+  course.description = description;
+
+  await CourseRepo.update(
+    {
+      id,
+    },
+    course
+  );
+};
+
 const deleteCourse = async (id: number) =>
   await CourseRepo.delete({
     id: Equal(id),
@@ -57,4 +76,5 @@ export {
   getAllCoursesByAccountId,
   getCourseById,
   deleteCourse,
+  editCourse,
 };
