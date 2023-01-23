@@ -13,7 +13,7 @@ import {
 } from '../repositories/IntegrationRepository';
 import { getPlaformByName } from '../repositories/PlatformRepository';
 import { verifyUser } from '../services/authService';
-import ModuleValidator from '../validators/ModuleValidator';
+import IntegrationValidator from '../validators/IntegrationValidator';
 
 const integrationRouter = Router();
 
@@ -44,7 +44,7 @@ integrationRouter.get('/:id', validateToken, async (req, res) => {
 
 integrationRouter.post('/save/:accountId', validateToken, async (req, res) => {
   const integration = req.body as IntegrationSaveRequest;
-  const { error } = ModuleValidator.validate(integration);
+  const { error } = IntegrationValidator.validate(integration);
 
   if (error) return res.status(400).json(error.details.map((p) => p.message));
 

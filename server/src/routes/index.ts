@@ -2,7 +2,7 @@ import { Router } from 'express';
 import accountRoutes from './account.routes';
 import authRouter from './auth.routes';
 import courseRouter from './course.routes';
-import integrationRouter from './integration.routes copy';
+import integrationRouter from './integration.routes';
 import lessonRouter from './lesson.routes';
 import moduleRouter from './module.routes';
 
