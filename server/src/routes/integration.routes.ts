@@ -13,7 +13,10 @@ import {
 } from '../repositories/IntegrationRepository';
 import { getPlaformByName } from '../repositories/PlatformRepository';
 import { verifyUser } from '../services/authService';
-import IntegrationValidator from '../validators/IntegrationValidator';
+import {
+  IntegrationSaveValidator,
+  IntegrationUpdateValidator,
+} from '../validators/IntegrationValidator';
 
 const integrationRouter = Router();
 
@@ -44,7 +47,7 @@ integrationRouter.get('/:id', validateToken, async (req, res) => {
 
 integrationRouter.post('/save/:accountId', validateToken, async (req, res) => {
   const integration = req.body as IntegrationSaveRequest;
-  const { error } = IntegrationValidator.validate(integration);
+  const { error } = IntegrationSaveValidator.validate(integration);
 
   if (error) return res.status(400).json(error.details.map((p) => p.message));
 
@@ -68,6 +71,9 @@ integrationRouter.post('/save/:accountId', validateToken, async (req, res) => {
 
 integrationRouter.put('/update/:id', validateToken, async (req, res) => {
   const integrationUpdated = req.body as { publicKey: string };
+  const { error } = IntegrationUpdateValidator.validate(integrationUpdated);
+
+  if (error) return res.status(400).json(error.details.map((p) => p.message));
   const { id } = req.params;
 
   const integration = await getIntegrationById(Number.parseInt(id));
