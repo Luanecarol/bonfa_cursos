@@ -17,6 +17,9 @@ class Integration {
   @Column({ type: 'varchar', length: 250 })
   publicKey: string;
 
+  @Column({ type: 'boolean', default: false })
+  isActive: boolean;
+
   @ManyToOne(() => Account, (account) => account.integrations)
   account: Account;
 

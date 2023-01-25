@@ -15,6 +15,18 @@ const getAllIntegrations = async () => {
   });
 };
 
+const getIntegrationByAccountAndPlatform = async (
+  accountId: number,
+  platformId: number
+) => {
+  return await IntegrationRepo.findOne({
+    where: {
+      account: { id: accountId },
+      platform: { id: platformId },
+    },
+  });
+};
+
 const getAllIntegrationsByAccountId = async (accountId: number) => {
   return await IntegrationRepo.find({
     where: {
@@ -22,6 +34,14 @@ const getAllIntegrationsByAccountId = async (accountId: number) => {
     },
   });
 };
+
+const getAccountActiveIntegration = async (accountId: number) =>
+  await IntegrationRepo.findOne({
+    where: {
+      account: { id: accountId },
+      isActive: true,
+    },
+  });
 
 const getIntegrationById = (id: number) =>
   IntegrationRepo.findOne({
@@ -33,6 +53,25 @@ const getIntegrationById = (id: number) =>
       platform: true,
     },
   });
+
+const activateIntegration = async (
+  integrationId: number,
+  accountId: number
+) => {
+  const integration = await IntegrationRepo.update(
+    {
+      id: integrationId,
+    },
+    {
+      isActive: true,
+    }
+  );
+
+  await IntegrationRepo.query(
+    'UPDATE integration SET isActive = 0 WHERE accountId = ? AND id != ?',
+    [accountId, integrationId]
+  );
+};
 
 const saveIntegration = async (
   account: Account,
@@ -71,4 +110,7 @@ export {
   getIntegrationById,
   deleteIntegration,
   editIntegration,
+  getIntegrationByAccountAndPlatform,
+  activateIntegration,
+  getAccountActiveIntegration,
 };

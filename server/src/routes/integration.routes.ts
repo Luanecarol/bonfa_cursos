@@ -4,10 +4,13 @@ import { validateToken } from '../middlewares/authMiddleware';
 import IntegrationSaveRequest from '../models/IntegrationSaveRequest';
 import { GetAccountById } from '../repositories/AccountRepository';
 import {
+  activateIntegration,
   deleteIntegration,
   editIntegration,
+  getAccountActiveIntegration,
   getAllIntegrations,
   getAllIntegrationsByAccountId,
+  getIntegrationByAccountAndPlatform,
   getIntegrationById,
   saveIntegration,
 } from '../repositories/IntegrationRepository';
@@ -34,16 +37,51 @@ integrationRouter.get('/byAccount/:id', validateToken, async (req, res) => {
   return res.status(200).json(modules);
 });
 
+integrationRouter.get('/active/:accountId', validateToken, async (req, res) => {
+  const { accountId } = req.params;
+
+  const integration = await getAccountActiveIntegration(
+    Number.parseInt(accountId) ?? 0
+  );
+
+  if (!integration)
+    return res.status(404).json({
+      erro: 'Integração não encontrada',
+    });
+
+  return res.status(200).json(integration);
+});
+
 integrationRouter.get('/:id', validateToken, async (req, res) => {
   const { id } = req.params;
 
-  const module = await getIntegrationById(Number.parseInt(id) ?? 0);
-  if (!module)
+  const integration = await getIntegrationById(Number.parseInt(id) ?? 0);
+  if (!integration)
     return res.status(404).json({
-      erro: 'Integração não encontrado',
+      erro: 'Integração não encontrada',
     });
-  return res.status(200).json(module);
+  return res.status(200).json(integration);
 });
+
+integrationRouter.put(
+  '/activate/:integrationId',
+  validateToken,
+  async (req, res) => {
+    const { integrationId } = req.params;
+
+    const integration = await getIntegrationById(
+      Number.parseInt(integrationId)
+    );
+    if (!integration)
+      return res.status(404).json({
+        erro: 'Integração não encontrada',
+      });
+
+    await activateIntegration(integration.id, integration.account.id);
+
+    return res.status(200).json();
+  }
+);
 
 integrationRouter.post('/save/:accountId', validateToken, async (req, res) => {
   const integration = req.body as IntegrationSaveRequest;
@@ -55,14 +93,24 @@ integrationRouter.post('/save/:accountId', validateToken, async (req, res) => {
   const account = await GetAccountById(Number.parseInt(accountId));
   if (!account)
     return res.status(404).json({
-      error: 'Conta não encontrado',
+      error: 'Conta não encontrada',
     });
   const platform = await getPlaformByName(integration.platformName);
 
   if (!platform)
     return res.status(404).json({
-      error: 'plataforma não encontrado',
+      error: 'plataforma não encontrada',
     });
+
+  const alreadyHaveIntegration = await getIntegrationByAccountAndPlatform(
+    account.id,
+    platform.id
+  );
+  if (alreadyHaveIntegration) {
+    return res.status(400).json({
+      error: 'Já possui essa integração',
+    });
+  }
 
   await saveIntegration(account, platform, integration.publicKey);
 
@@ -80,7 +128,7 @@ integrationRouter.put('/update/:id', validateToken, async (req, res) => {
 
   if (!integration)
     return res.status(400).json({
-      erro: 'Integração não encontrado',
+      erro: 'Integração não encontrada',
     });
 
   await editIntegration(integration.id, integrationUpdated.publicKey);
@@ -94,7 +142,7 @@ integrationRouter.delete('/delete/:id', validateToken, async (req, res) => {
 
     if (!integration)
       return res.status(404).json({
-        erro: 'Integração não encontrado',
+        erro: 'Integração não encontrada',
       });
 
     if (!verifyUser(integration.account, req.headers.authorization!))
