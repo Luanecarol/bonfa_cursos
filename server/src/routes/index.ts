@@ -5,6 +5,7 @@ import courseRouter from './course.routes';
 import integrationRouter from './integration.routes';
 import lessonRouter from './lesson.routes';
 import moduleRouter from './module.routes';
+import subscriptionRouter from './subscription.routes';
 
 const routes = Router();
 
@@ -14,5 +15,6 @@ routes.use('/v1/courses', courseRouter);
 routes.use('/v1/modules', moduleRouter);
 routes.use('/v1/lessons', lessonRouter);
 routes.use('/v1/integrations', integrationRouter);
+routes.use('/v1/subscription', subscriptionRouter);
 
 export default routes;
