@@ -6,7 +6,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import Account from './Account';
+import Course from './Course';
 import Platform from './Platform';
 
 @Entity()
@@ -15,13 +15,10 @@ class Integration {
   id: number;
 
   @Column({ type: 'varchar', length: 250 })
-  publicKey: string;
+  urlCheckout: string | null;
 
-  @Column({ type: 'boolean', default: false })
-  isActive: boolean;
-
-  @ManyToOne(() => Account, (account) => account.integrations)
-  account: Account;
+  @ManyToOne(() => Course, (course) => course.integrations)
+  course: Course;
 
   @OneToOne(() => Platform)
   @JoinColumn()

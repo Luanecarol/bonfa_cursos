@@ -17,11 +17,11 @@ export class AddIntgrationTable1674470821399 implements MigrationInterface {
             type: 'int',
           },
           {
-            name: 'accountId',
+            name: 'courseId',
             type: 'int',
           },
           {
-            name: 'publicKey',
+            name: 'urlCheckout',
             type: 'varchar',
             length: '250',
           },
@@ -33,9 +33,9 @@ export class AddIntgrationTable1674470821399 implements MigrationInterface {
             referencedTableName: 'Platform',
           },
           {
-            columnNames: ['accountId'],
+            columnNames: ['courseId'],
             referencedColumnNames: ['id'],
-            referencedTableName: 'Account',
+            referencedTableName: 'Course',
           },
         ],
       }),

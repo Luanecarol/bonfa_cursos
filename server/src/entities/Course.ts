@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import Account from './Account';
+import Integration from './Integration';
 import Module from './Module';
 
 @Entity()
@@ -30,6 +31,9 @@ class Course {
 
   @OneToMany(() => Module, (module) => module.course)
   modules: Module[];
+
+  @OneToMany(() => Integration, (integration) => integration.course)
+  integrations: Course[];
 }
 
 export default Course;

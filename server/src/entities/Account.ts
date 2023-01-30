@@ -1,6 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import Course from './Course';
-import Integration from './Integration';
 
 @Entity()
 class Account {
@@ -18,9 +17,6 @@ class Account {
 
   @OneToMany(() => Course, (course) => course.account)
   courses: Course[];
-
-  @OneToMany(() => Integration, (integration) => integration.account)
-  integrations: Course[];
 }
 
 export default Account;

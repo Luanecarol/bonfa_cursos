@@ -1,4 +1,4 @@
 export default interface IntegrationSaveRequest {
-  publicKey: string;
+  urlCheckout: string;
   platformName: string;
 }

@@ -1,6 +1,6 @@
 import { Equal } from 'typeorm';
 import AppDataSource from '../../dataSource';
-import Account from '../entities/Account';
+import Course from '../entities/Course';
 import Integration from '../entities/Integration';
 import Platform from '../entities/Platform';
 
@@ -9,39 +9,31 @@ const IntegrationRepo = AppDataSource.getRepository(Integration);
 const getAllIntegrations = async () => {
   return await IntegrationRepo.find({
     relations: {
-      account: true,
+      course: true,
       platform: true,
     },
   });
 };
 
-const getIntegrationByAccountAndPlatform = async (
+const getIntegrationByCourseAndPlatform = async (
   accountId: number,
   platformId: number
 ) => {
   return await IntegrationRepo.findOne({
     where: {
-      account: { id: accountId },
+      course: { id: accountId },
       platform: { id: platformId },
     },
   });
 };
 
-const getAllIntegrationsByAccountId = async (accountId: number) => {
+const getAllIntegrationsByCourseId = async (courseId: number) => {
   return await IntegrationRepo.find({
     where: {
-      account: { id: accountId },
+      course: { id: courseId },
     },
   });
 };
-
-const getAccountActiveIntegration = async (accountId: number) =>
-  await IntegrationRepo.findOne({
-    where: {
-      account: { id: accountId },
-      isActive: true,
-    },
-  });
 
 const getIntegrationById = (id: number) =>
   IntegrationRepo.findOne({
@@ -49,46 +41,29 @@ const getIntegrationById = (id: number) =>
       id,
     },
     relations: {
-      account: true,
+      course: {
+        account: true,
+      },
       platform: true,
     },
   });
 
-const activateIntegration = async (
-  integrationId: number,
-  accountId: number
-) => {
-  const integration = await IntegrationRepo.update(
-    {
-      id: integrationId,
-    },
-    {
-      isActive: true,
-    }
-  );
-
-  await IntegrationRepo.query(
-    'UPDATE integration SET isActive = 0 WHERE accountId = ? AND id != ?',
-    [accountId, integrationId]
-  );
-};
-
 const saveIntegration = async (
-  account: Account,
+  course: Course,
   platform: Platform,
-  key: string
+  urlCheckout?: string
 ) => {
   const integration = new Integration();
-  integration.account = account;
+  integration.course = course;
   integration.platform = platform;
-  integration.publicKey = key;
+  integration.urlCheckout = urlCheckout ?? null;
 
   await IntegrationRepo.save(integration);
 };
 
-const editIntegration = async (id: number, key: string) => {
+const editIntegration = async (id: number, urlCheckout: string) => {
   const integration = new Integration();
-  integration.publicKey = key;
+  integration.urlCheckout = urlCheckout;
 
   await IntegrationRepo.update(
     {
@@ -106,11 +81,9 @@ const deleteIntegration = async (id: number) =>
 export {
   saveIntegration,
   getAllIntegrations,
-  getAllIntegrationsByAccountId,
+  getAllIntegrationsByCourseId,
   getIntegrationById,
   deleteIntegration,
   editIntegration,
-  getIntegrationByAccountAndPlatform,
-  activateIntegration,
-  getAccountActiveIntegration,
+  getIntegrationByCourseAndPlatform,
 };
