@@ -5,10 +5,15 @@ const AccountRepo = AppDataSource.getRepository(Account);
 
 const getAllAccounts = async () => await AccountRepo.find();
 
-const SaveAccount = async (username: string, password: string) => {
+const SaveAccount = async (
+  username: string,
+  password: string,
+  email: string
+) => {
   const account = new Account();
   account.username = username;
   account.password = password;
+  account.email = email;
 
   AccountRepo.save(account);
 };
@@ -16,6 +21,21 @@ const SaveAccount = async (username: string, password: string) => {
 const GetAccountByUsername = async (username: string) => {
   const account = await AccountRepo.findOne({
     where: { username },
+  });
+
+  return account;
+};
+
+const GetAccountByEmailOrUsername = async (usernameOrEmail: string) => {
+  const account = await AccountRepo.findOne({
+    where: [
+      {
+        username: usernameOrEmail,
+      },
+      {
+        email: usernameOrEmail,
+      },
+    ],
   });
 
   return account;
@@ -40,4 +60,5 @@ export {
   ChangePassword,
   GetAccountById,
   getAllAccounts,
+  GetAccountByEmailOrUsername,
 };

@@ -9,6 +9,9 @@ class Account {
   @Column({ type: 'varchar', length: 45 })
   username: string;
 
+  @Column({ type: 'varchar', length: 45 })
+  email: string;
+
   @Column({ type: 'varchar', length: 150 })
   password: string;
 

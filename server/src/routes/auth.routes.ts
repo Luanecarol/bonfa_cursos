@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { LoginDto } from '../models/loginRequest';
-import { GetAccountByUsername } from '../repositories/AccountRepository';
+import { GetAccountByEmailOrUsername } from '../repositories/AccountRepository';
 import { generateToken } from '../services/authService';
 
 const authRouter = Router();
@@ -13,7 +13,7 @@ authRouter.post('/login', async (req, res) => {
       erro: 'Email e senha obrigatórios',
     });
 
-  const account = await GetAccountByUsername(body.username);
+  const account = await GetAccountByEmailOrUsername(body.username);
 
   if (!account)
     return res.status(404).json({

@@ -10,6 +10,7 @@ const generateToken = (account: Account) =>
     {
       user: account.id,
       role: account.role,
+      email: account.email,
     },
     privateKey
   );
