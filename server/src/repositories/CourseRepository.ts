@@ -2,6 +2,7 @@ import { Equal } from 'typeorm';
 import AppDataSource from '../../dataSource';
 import Account from '../entities/Account';
 import Course from '../entities/Course';
+import { SaveAllIntegrations } from './IntegrationRepository';
 
 const CourseRepo = AppDataSource.getRepository(Course);
 
@@ -9,6 +10,7 @@ const getAllCourses = async () => {
   return await CourseRepo.find({
     relations: {
       account: true,
+      integrations: true,
     },
   });
 };
@@ -43,7 +45,9 @@ const saveCourse = async (
   course.description = description;
   course.account = account;
 
-  await CourseRepo.save(course);
+  const courseSaved = await CourseRepo.save(course);
+
+  await SaveAllIntegrations(courseSaved);
 };
 
 const editCourse = async (

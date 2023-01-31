@@ -1,19 +1,23 @@
 import { Router } from 'express';
-import MercadoPagoApi from '../config/MercadoPagoApi';
-import { validateToken } from '../middlewares/authMiddleware';
-import CardInfoRequest from '../models/cardInfoRequest';
+import { subscriptionPaidWebHook } from '../models/subscriptionPaidWebHook';
+import { GetAccountByEmailOrUsername } from '../repositories/AccountRepository';
+import { getPlanByName } from '../repositories/PlanRepository';
+import { createSubscription } from '../repositories/SubscriptionRepository';
 
 const subscriptionRouter = Router();
 
-subscriptionRouter.post('/create', validateToken, async (req, res) => {
-  const cardInfo = req.body as CardInfoRequest;
+subscriptionRouter.post('/webhook/callback', async (req, res) => {
+  const subcriptionPaidWebHook = req.body as subscriptionPaidWebHook;
 
-  const response = await MercadoPagoApi.post('/v1/payments', cardInfo, {
-    headers: {
-      Authorization:
-        'Bearer TEST-786632715734040-012217-bde69ef715ad8d4090604f16255a7f43-219805889',
-    },
-  });
+  const account = await GetAccountByEmailOrUsername(
+    subcriptionPaidWebHook.client.email
+  );
+
+  const plan = await getPlanByName(subcriptionPaidWebHook.product.name);
+  console.log(plan);
+  console.log(subcriptionPaidWebHook.product.name);
+  await createSubscription(account!, plan!);
+
   return res.status(200).json();
 });
 

@@ -49,7 +49,11 @@ accountRoutes.post('/create_account', async (req, res) => {
 
   if (webHookRequest.event === 'PURCHASE_APPROVED' && !account) {
     try {
-      await SaveAccount(username, password.toString());
+      await SaveAccount(
+        username,
+        password.toString(),
+        webHookRequest.data.buyer.email
+      );
 
       return res.status(201).json();
     } catch (e: any) {

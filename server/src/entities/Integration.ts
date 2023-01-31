@@ -14,8 +14,8 @@ class Integration {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'varchar', length: 250 })
-  urlCheckout: string | null;
+  @Column({ type: 'varchar', length: 250, default: null, nullable: true })
+  urlCheckout?: string;
 
   @ManyToOne(() => Course, (course) => course.integrations)
   course: Course;

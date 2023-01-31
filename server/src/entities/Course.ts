@@ -20,9 +20,6 @@ class Course {
   @Column({ type: 'text' })
   description: string;
 
-  @Column({ type: 'varchar', length: 250 })
-  urlCheckout: string;
-
   @Column({ type: 'varchar', length: 50 })
   category: string;
 

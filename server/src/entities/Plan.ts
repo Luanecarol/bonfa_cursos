@@ -2,9 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import Subscription from './Subscription';
 
 @Entity()
 class Plan {
@@ -16,6 +18,9 @@ class Plan {
 
   @Column({ type: 'float', precision: 2 })
   value: string;
+
+  @OneToOne(() => Subscription)
+  subscription: Subscription;
 
   @CreateDateColumn({
     type: 'timestamp',

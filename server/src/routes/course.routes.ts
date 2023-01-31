@@ -2,6 +2,7 @@ import { Router } from 'express';
 import Course from '../entities/Course';
 import { validateTokenAdmin } from '../middlewares/AuthAdminMiddleware';
 import { validateToken } from '../middlewares/authMiddleware';
+import { validateCourseAdd } from '../middlewares/courseValidation';
 import { GetAccountById } from '../repositories/AccountRepository';
 import {
   deleteCourse,
@@ -41,24 +42,29 @@ courseRouter.get('/:id', validateToken, async (req, res) => {
   return res.status(200).json(course);
 });
 
-courseRouter.post('/save/:accountId', validateToken, async (req, res) => {
-  const course = req.body as Course;
-  const accountId = req.params.accountId;
+courseRouter.post(
+  '/save/:accountId',
+  validateToken,
+  validateCourseAdd,
+  async (req, res) => {
+    const course = req.body as Course;
+    const accountId = req.params.accountId;
 
-  const account = await GetAccountById(Number.parseInt(accountId));
+    const account = await GetAccountById(Number.parseInt(accountId));
 
-  if (!account)
-    return res.status(404).json({
-      error: 'Conta não encontrada',
-    });
+    if (!account)
+      return res.status(404).json({
+        error: 'Conta não encontrada',
+      });
 
-  const { error } = CourseValidator.validate(course);
+    const { error } = CourseValidator.validate(course);
 
-  if (error) return res.status(400).json(error.details.map((p) => p.message));
+    if (error) return res.status(400).json(error.details.map((p) => p.message));
 
-  await saveCourse(account, course.name, course.description, course.category);
-  return res.status(200).json();
-});
+    await saveCourse(account, course.name, course.description, course.category);
+    return res.status(200).json();
+  }
+);
 
 courseRouter.put('/update/:id', validateToken, async (req, res) => {
   const courseUpdated = req.body as Course;

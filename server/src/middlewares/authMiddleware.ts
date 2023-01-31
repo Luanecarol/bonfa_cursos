@@ -15,7 +15,7 @@ const validateToken = (req: Request, res: Response, next: NextFunction) => {
 
   try {
     const payload = jsonwebtoken.verify(token, privateKey!) as TokenPayload;
-    if (!payload.user) return res.status(401).json();
+    if (!payload.user) return res.status(401).json('unhe');
 
     return next();
   } catch (e: any) {

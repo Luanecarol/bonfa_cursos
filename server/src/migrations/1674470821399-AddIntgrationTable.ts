@@ -24,6 +24,8 @@ export class AddIntgrationTable1674470821399 implements MigrationInterface {
             name: 'urlCheckout',
             type: 'varchar',
             length: '250',
+            default: null,
+            isNullable: true,
           },
         ],
         foreignKeys: [

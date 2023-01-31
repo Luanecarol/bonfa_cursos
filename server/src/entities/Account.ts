@@ -1,5 +1,12 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import Course from './Course';
+import Subscription from './Subscription';
 
 @Entity()
 class Account {
@@ -20,6 +27,9 @@ class Account {
 
   @OneToMany(() => Course, (course) => course.account)
   courses: Course[];
+
+  @OneToOne(() => Subscription, (subscription) => subscription.account)
+  subscription: Subscription;
 }
 
 export default Account;

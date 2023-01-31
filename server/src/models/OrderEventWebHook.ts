@@ -9,10 +9,11 @@ export interface OrderEventWebHook {
     | 'PURCHASE_CHARGEBACK'
     | 'PURCHASE_EXPIRED'
     | 'PURCHASE_DELAYED';
-
-  buyer: {
-    email: string;
-    name: string;
-    checkout_phone: string;
+  data: {
+    buyer: {
+      email: string;
+      name: string;
+      checkout_phone: string;
+    };
   };
 }

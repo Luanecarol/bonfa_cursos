@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-console.log(__dirname);
+
 const AppDataSource = new DataSource({
   type: 'mysql',
   host: 'localhost',
@@ -9,6 +9,7 @@ const AppDataSource = new DataSource({
   database: 'eadfly',
   synchronize: true,
   ssl: false,
+  logging: false,
   entities: [__dirname + '/src/**/*.{js,ts}'],
   subscribers: [],
   migrations: ['./src/migrations/*.ts'],

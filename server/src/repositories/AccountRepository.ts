@@ -3,7 +3,12 @@ import Account from '../entities/Account';
 
 const AccountRepo = AppDataSource.getRepository(Account);
 
-const getAllAccounts = async () => await AccountRepo.find();
+const getAllAccounts = async () =>
+  await AccountRepo.find({
+    relations: {
+      subscription: true,
+    },
+  });
 
 const SaveAccount = async (
   username: string,

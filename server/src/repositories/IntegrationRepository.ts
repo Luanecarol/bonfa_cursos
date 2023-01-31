@@ -3,6 +3,7 @@ import AppDataSource from '../../dataSource';
 import Course from '../entities/Course';
 import Integration from '../entities/Integration';
 import Platform from '../entities/Platform';
+import { getPlaformByName } from './PlatformRepository';
 
 const IntegrationRepo = AppDataSource.getRepository(Integration);
 
@@ -48,6 +49,17 @@ const getIntegrationById = (id: number) =>
     },
   });
 
+const SaveAllIntegrations = async (course: Course) => {
+  const integrations = ['Eduzz', 'Monetizze', 'Hotmart', 'Kiwify'];
+
+  integrations.forEach(async (integration) => {
+    const platform = await getPlaformByName(integration);
+    if (platform) {
+      await saveIntegration(course, platform, '');
+    }
+  });
+};
+
 const saveIntegration = async (
   course: Course,
   platform: Platform,
@@ -56,7 +68,7 @@ const saveIntegration = async (
   const integration = new Integration();
   integration.course = course;
   integration.platform = platform;
-  integration.urlCheckout = urlCheckout ?? null;
+  integration.urlCheckout = urlCheckout;
 
   await IntegrationRepo.save(integration);
 };
@@ -86,4 +98,5 @@ export {
   deleteIntegration,
   editIntegration,
   getIntegrationByCourseAndPlatform,
+  SaveAllIntegrations,
 };
