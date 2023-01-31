@@ -32,7 +32,9 @@ integrationRouter.get('/byCourse/:id', validateToken, async (req, res) => {
 
   const modules = await getAllIntegrationsByCourseId(Number.parseInt(id) ?? 0);
 
-  return res.status(200).json(modules);
+  return res
+    .status(200)
+    .json(modules.map((module) => delete module.course.account.password));
 });
 
 integrationRouter.get('/:id', validateToken, async (req, res) => {
@@ -60,6 +62,10 @@ integrationRouter.post('/save/:courseId', validateToken, async (req, res) => {
     return res.status(404).json({
       error: 'Conta não encontrada',
     });
+
+  if (!verifyUser(course.account, req.headers.authorization!))
+    return res.status(403).json();
+
   const platform = await getPlaformByName(integration.platformName);
 
   if (!platform)
@@ -95,6 +101,9 @@ integrationRouter.put('/update/:id', validateToken, async (req, res) => {
     return res.status(400).json({
       erro: 'Integração não encontrada',
     });
+
+  if (!verifyUser(integration.course.account, req.headers.authorization!))
+    return res.status(403).json();
 
   delete integration.course.account.password;
 

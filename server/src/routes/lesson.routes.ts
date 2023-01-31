@@ -53,6 +53,9 @@ lessonRouter.post('/save/:moduleId', validateToken, async (req, res) => {
       error: 'Modulo não encontrado',
     });
 
+  if (!verifyUser(module.course.account, req.headers.authorization!))
+    return res.status(403).json();
+
   const { error } = LessonValidator.validate(lesson);
 
   if (error) return res.status(400).json(error.details.map((p) => p.message));
@@ -71,6 +74,9 @@ lessonRouter.put('/update/:id', validateToken, async (req, res) => {
     return res.status(400).json({
       erro: 'Aula não encontrada',
     });
+
+  if (!verifyUser(lesson.module.course.account, req.headers.authorization!))
+    return res.status(403).json();
 
   const { error } = LessonValidator.validate(lessonUpdated);
 

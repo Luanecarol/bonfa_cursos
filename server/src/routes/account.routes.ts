@@ -16,6 +16,7 @@ import {
   getAllAccounts,
   SaveAccount,
 } from '../repositories/AccountRepository';
+import { verifyUser } from '../services/authService';
 import ChangePasswordValidator from '../validators/ChangePasswordValidator';
 dotenv.config({
   path: path.resolve('.env'),
@@ -77,9 +78,14 @@ accountRoutes.put('/change_password', validateToken, async (req, res) => {
 
     const account = await GetAccountById(payload.user);
 
+    if (!verifyUser(account!, req.headers.authorization!))
+      return res.status(403).json();
+
     if (account?.password != body.oldPassword)
       return res.status(400).json('Senha incorreta');
+
     await ChangePassword(payload.user, body.newPassword);
+
     return res.status(200).json();
   } catch (e: any) {
     return res.status(500).json(e.message);

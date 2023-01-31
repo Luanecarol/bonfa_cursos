@@ -61,6 +61,9 @@ courseRouter.post(
         error: 'Conta não encontrada',
       });
 
+    if (!verifyUser(account, req.headers.authorization!))
+      return res.status(403).json();
+
     const { error } = CourseValidator.validate(course);
 
     if (error) return res.status(400).json(error.details.map((p) => p.message));
@@ -80,6 +83,9 @@ courseRouter.put('/update/:id', validateToken, async (req, res) => {
     return res.status(400).json({
       erro: 'Curso não encontrado',
     });
+
+  if (!verifyUser(course.account, req.headers.authorization!))
+    return res.status(403).json();
 
   const { error } = CourseValidator.validate(courseUpdated);
 
