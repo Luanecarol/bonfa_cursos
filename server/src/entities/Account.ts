@@ -20,7 +20,7 @@ class Account {
   email: string;
 
   @Column({ type: 'varchar', length: 150 })
-  password: string;
+  password?: string;
 
   @Column({ type: 'varchar', length: 20, default: 'app_owner' })
   role: string;

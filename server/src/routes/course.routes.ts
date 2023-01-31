@@ -28,7 +28,9 @@ courseRouter.get('/byAccount/:id', validateToken, async (req, res) => {
 
   const courses = await getAllCoursesByAccountId(Number.parseInt(id) ?? 0);
 
-  return res.status(200).json(courses);
+  return res
+    .status(200)
+    .json(courses.map((item) => delete item.account.password));
 });
 
 courseRouter.get('/:id', validateToken, async (req, res) => {
@@ -39,6 +41,8 @@ courseRouter.get('/:id', validateToken, async (req, res) => {
     return res.status(404).json({
       erro: 'Curso não encontrado',
     });
+
+  delete course.account.password;
   return res.status(200).json(course);
 });
 

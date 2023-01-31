@@ -38,6 +38,8 @@ moduleRouter.get('/:id', validateToken, async (req, res) => {
     return res.status(404).json({
       erro: 'Modulo não encontrado',
     });
+
+  delete module.course.account.password;
   return res.status(200).json(module);
 });
 

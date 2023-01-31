@@ -38,6 +38,8 @@ lessonRouter.get('/:id', validateToken, async (req, res) => {
     return res.status(404).json({
       erro: 'Aula não encontrada',
     });
+
+  delete lesson.module.course.account.password;
   return res.status(200).json(lesson);
 });
 

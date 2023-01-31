@@ -43,6 +43,8 @@ integrationRouter.get('/:id', validateToken, async (req, res) => {
     return res.status(404).json({
       erro: 'Integração não encontrada',
     });
+
+  delete integration.course.account.password;
   return res.status(200).json(integration);
 });
 
@@ -93,6 +95,8 @@ integrationRouter.put('/update/:id', validateToken, async (req, res) => {
     return res.status(400).json({
       erro: 'Integração não encontrada',
     });
+
+  delete integration.course.account.password;
 
   await editIntegration(integration.id, integrationUpdated.urlCheckout);
   return res.status(200).json();
