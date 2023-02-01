@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import Account from './Account';
+import Category from './Category';
 import Integration from './Integration';
 import Module from './Module';
 
@@ -20,8 +21,8 @@ class Course {
   @Column({ type: 'text' })
   description: string;
 
-  @Column({ type: 'varchar', length: 50 })
-  category: string;
+  @ManyToOne(() => Category, (category) => category.courses)
+  category: Category;
 
   @ManyToOne(() => Account, (account) => account.courses)
   account: Account;

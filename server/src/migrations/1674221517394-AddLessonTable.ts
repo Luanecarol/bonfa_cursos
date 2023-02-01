@@ -16,6 +16,7 @@ export class AddLessonTable1674221517394 implements MigrationInterface {
             type: 'int',
             isPrimary: true,
             isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'lessonTitle',

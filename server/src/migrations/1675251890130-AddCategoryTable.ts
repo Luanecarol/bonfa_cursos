@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class AddPlatformTable1674469200661 implements MigrationInterface {
+export class AddCategoryTable1675251890130 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'Platform',
+        name: 'Category',
         columns: [
           {
             name: 'id',
@@ -14,17 +14,16 @@ export class AddPlatformTable1674469200661 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
-            name: 'platformName',
+            name: 'title',
             type: 'varchar',
             length: '50',
           },
         ],
-      }),
-      true
+      })
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('Platform');
+    await queryRunner.dropTable('Category');
   }
 }

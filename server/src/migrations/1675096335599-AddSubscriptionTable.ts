@@ -16,14 +16,17 @@ export class AddSubscriptionTable1675096335599 implements MigrationInterface {
             type: 'int',
             isPrimary: true,
             isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'accountId',
             type: 'int',
+            isUnique: false,
           },
           {
             name: 'planId',
             type: 'int',
+            isUnique: false,
           },
           {
             name: 'startDate',

@@ -14,7 +14,6 @@ subscriptionRouter.post('/webhook/callback', async (req, res) => {
   );
 
   const plan = await getPlanByName(subcriptionPaidWebHook.product.name);
-  console.log(plan);
   console.log(subcriptionPaidWebHook.product.name);
   await createSubscription(account!, plan!);
 

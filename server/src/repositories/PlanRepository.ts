@@ -11,11 +11,6 @@ const getPlanByName = async (name: string) => {
   });
 };
 
-const getAllPlans = async () =>
-  planRepository.find({
-    relations: {
-      subscription: true,
-    },
-  });
+const getAllPlans = async () => planRepository.find({});
 
 export { getPlanByName, getAllPlans };

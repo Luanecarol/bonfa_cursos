@@ -16,6 +16,7 @@ export class AddCourseTable1673539467848 implements MigrationInterface {
             type: 'int',
             isPrimary: true,
             isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'name',
@@ -35,6 +36,7 @@ export class AddCourseTable1673539467848 implements MigrationInterface {
           {
             name: 'accountId',
             type: 'int',
+            isUnique: false,
           },
         ],
       }),

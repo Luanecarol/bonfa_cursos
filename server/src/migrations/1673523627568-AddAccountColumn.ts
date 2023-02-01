@@ -11,6 +11,7 @@ export class AddAccountColumn1673523627568 implements MigrationInterface {
             type: 'int',
             isPrimary: true,
             isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'username',

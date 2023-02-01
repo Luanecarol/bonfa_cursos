@@ -16,6 +16,7 @@ export class AddModuleTable1674216153444 implements MigrationInterface {
             type: 'int',
             isPrimary: true,
             isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'name',

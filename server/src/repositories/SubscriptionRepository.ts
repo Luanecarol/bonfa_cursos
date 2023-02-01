@@ -8,7 +8,6 @@ const SubscriptionRepository = AppDataSource.getRepository(Subscription);
 
 const createSubscription = async (account: Account, plan: Plan) => {
   var currentDate = moment();
-  console.log(plan);
   var sub = new Subscription();
   sub.account = account;
   sub.plan = plan;
@@ -18,14 +17,16 @@ const createSubscription = async (account: Account, plan: Plan) => {
   await SubscriptionRepository.save(sub);
 };
 
-const getSubscriptionByAccountId = async (accountId: number) =>
-  SubscriptionRepository.findOne({
+const getSubscriptionByAccountId = async (accountId: number) => {
+  return SubscriptionRepository.findOne({
     where: {
       account: { id: accountId },
     },
     relations: {
       plan: true,
+      account: true,
     },
   });
+};
 
 export { createSubscription, getSubscriptionByAccountId };

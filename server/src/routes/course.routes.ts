@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import Course from '../entities/Course';
 import { validateTokenAdmin } from '../middlewares/AuthAdminMiddleware';
 import { validateToken } from '../middlewares/authMiddleware';
 import { validateCourseAdd } from '../middlewares/courseValidation';
+import saveUpdateCourseRequest from '../models/saveUpdateCourseRequest';
 import { GetAccountById } from '../repositories/AccountRepository';
+import { getCategoryByName } from '../repositories/CategoryRepository';
 import {
   deleteCourse,
   editCourse,
@@ -51,7 +52,7 @@ courseRouter.post(
   validateToken,
   validateCourseAdd,
   async (req, res) => {
-    const course = req.body as Course;
+    const course = req.body as saveUpdateCourseRequest;
     const accountId = req.params.accountId;
 
     const account = await GetAccountById(Number.parseInt(accountId));
@@ -64,17 +65,23 @@ courseRouter.post(
     if (!verifyUser(account, req.headers.authorization!))
       return res.status(403).json();
 
+    const category = await getCategoryByName(course.category);
+
+    if (!category)
+      return res.status(404).json({
+        error: 'Categoria não encontrada',
+      });
     const { error } = CourseValidator.validate(course);
 
     if (error) return res.status(400).json(error.details.map((p) => p.message));
 
-    await saveCourse(account, course.name, course.description, course.category);
+    await saveCourse(account, course.name, course.description, category);
     return res.status(200).json();
   }
 );
 
 courseRouter.put('/update/:id', validateToken, async (req, res) => {
-  const courseUpdated = req.body as Course;
+  const courseUpdated = req.body as saveUpdateCourseRequest;
   const { id } = req.params;
 
   const course = await getCourseById(Number.parseInt(id));
@@ -87,6 +94,12 @@ courseRouter.put('/update/:id', validateToken, async (req, res) => {
   if (!verifyUser(course.account, req.headers.authorization!))
     return res.status(403).json();
 
+  const category = await getCategoryByName(courseUpdated.category);
+
+  if (!category)
+    return res.status(404).json({
+      error: 'Categoria não encontrada',
+    });
   const { error } = CourseValidator.validate(courseUpdated);
 
   if (error) return res.status(400).json(error.details.map((p) => p.message));
@@ -95,7 +108,7 @@ courseRouter.put('/update/:id', validateToken, async (req, res) => {
     course.id,
     courseUpdated.name,
     courseUpdated.description,
-    courseUpdated.category
+    category
   );
   return res.status(200).json();
 });

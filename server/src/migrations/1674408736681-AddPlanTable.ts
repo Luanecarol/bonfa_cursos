@@ -10,6 +10,7 @@ export class AddPlanTable1674408736681 implements MigrationInterface {
             name: 'id',
             type: 'int',
             isPrimary: true,
+            generationStrategy: 'increment',
             isGenerated: true,
           },
           {

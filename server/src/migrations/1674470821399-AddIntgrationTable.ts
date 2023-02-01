@@ -11,6 +11,7 @@ export class AddIntgrationTable1674470821399 implements MigrationInterface {
             type: 'int',
             isPrimary: true,
             isGenerated: true,
+            generationStrategy: 'increment',
           },
           {
             name: 'platformId',

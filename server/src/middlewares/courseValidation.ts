@@ -8,13 +8,20 @@ export const validateCourseAdd = async (
   next: NextFunction
 ) => {
   try {
+    console.log('Entrou');
     const accountId = req.params.accountId;
+    console.log(accountId);
 
     const courses = await getAllCoursesByAccountId(Number.parseInt(accountId));
+    console.log(courses);
     const subscription = await getSubscriptionByAccountId(
       Number.parseInt(accountId)
     );
-    console.log(courses.length);
+
+    console.log(subscription);
+    if (!subscription) {
+      return res.status(403).json();
+    }
     switch (subscription?.plan.title) {
       case 'PLANO LITE':
         if (courses.length == 1) {
@@ -22,7 +29,7 @@ export const validateCourseAdd = async (
             .status(403)
             .json({ erro: 'Não pode adicionar mais cursos' });
         }
-      case 'PLANO START':
+      case 'PLANO STARTER':
         if (courses.length == 20) {
           return res
             .status(403)
