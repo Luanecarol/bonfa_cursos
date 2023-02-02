@@ -33,6 +33,9 @@ const getAllIntegrationsByCourseId = async (courseId: number) => {
     where: {
       course: { id: courseId },
     },
+    relations: {
+      course: true,
+    },
   });
 };
 

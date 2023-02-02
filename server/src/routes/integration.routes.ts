@@ -32,9 +32,7 @@ integrationRouter.get('/byCourse/:id', validateToken, async (req, res) => {
 
   const modules = await getAllIntegrationsByCourseId(Number.parseInt(id) ?? 0);
 
-  return res
-    .status(200)
-    .json(modules.map((module) => delete module.course.account.password));
+  return res.status(200).json(modules);
 });
 
 integrationRouter.get('/:id', validateToken, async (req, res) => {
